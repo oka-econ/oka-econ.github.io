@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tatsushi Oka - Academic Homepage</title>
+    <title>Tatsushi Oka</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,53 +12,109 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+            font-size: 16px;
         }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        .left-column, .right-column {
-            flex: 1;
-            min-width: 300px;
-        }
-        h1, h2 {
+        h1 {
             color: #2c3e50;
-        }
-        h2 {
-            margin-top: 1.5em;
+            font-size: 1.5em;
             margin-bottom: 0.5em;
         }
-        ul {
-            padding-left: 20px;
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .left-column, .right-column {
+            width: calc(50% - 10px);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 0.5em;
+            margin-bottom: 0.2em;
+            font-size: 1.125em;
+        }
+        .affiliation-heading, .education-heading {
+            font-size: 1.25em;
+            margin-top: 0;
+        }
+        ul, p {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0.2em;
+        }
+        ul li, p {
+            font-size: 1em;
+        }
+        .single-column {
+            margin-top: 1em;
+        }
+        .publication, .conference-proceeding, .working-paper, .research-grant {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+        .publication:before, .conference-proceeding:before, .working-paper:before, .research-grant:before {
+            content: "■";
+            position: absolute;
+            left: 0;
+            color: #16354a;
+        }
+        .publication p, .conference-proceeding p, .working-paper p, .research-grant p {
+            margin: 0;
+            padding: 0;
+            line-height: 1.3;
+        }
+        .article-title {
+            font-weight: bold;
+        }
+        .journal {
+            font-style: italic;
+        }    
+        .paper-link {
+            font-weight: 550; /* Slightly bold */
+            color: #17528d; /* Dark blue color, you can change this */
+            text-decoration: none; /* Removes underline from links */
+        }
+        .paper-link:hover {
+            text-decoration: underline; /* Adds underline on hover */
+        }
+        .separator {
+            font-weight: normal; /* Normal weight for the separator */
+            margin: 0 0.1em; /* Add some space around the separator */
         }
         @media (max-width: 768px) {
-            .container {
+            .info-container {
                 flex-direction: column;
+            }
+            .left-column, .right-column {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <h1>Tatsushi Oka</h1>
+    <div class="info-container">
         <div class="left-column">
-            <h1>Tatsushi Oka</h1>
-            <h2>Current Affiliation</h2>
-            <p>
-                Professor<br>
-                Department of Economics<br>
-                Keio University<br>
-                Tokyo, Japan<br>
-                Email: tatsushi.oka[at]keio.jp
-            </p>
+            <h2 class="affiliation-heading">Affiliation</h2>
+            <ul>
+                <li>Professor</li>
+                <li>Department of Economics</li>
+                <li>Keio University</li>
+                <li>Mita 2-15-45, Minato</li>
+                <li>Tokyo, Japan, 108-0073</li>
+                <li>Email: tatsushi.oka[at]keio.jp</li>
+            </ul>
+            <h2>Research Field</h2>
+            <p>Theoretical and Applied Econometrics</p>
         </div>
         <div class="right-column">
-            <h2>Education</h2>
+            <h2 class="education-heading">Education</h2>
             <ul>
                 <li>Ph.D. (Economics), Boston University</li>
                 <li>M.A. (Economics), Osaka University</li>
             </ul>
-
             <h2>Academic Positions</h2>
             <ul>
                 <li>2023-present: Professor, Keio University</li>
@@ -70,5 +126,106 @@
             </ul>
         </div>
     </div>
+    
+
+    <div class="single-column">
+        <h2>Publications</h2>
+        <div class="paper publication">
+            <p><span class="article-title">Not Eliminate but Aggregate: Post-Hoc Control over Mixture-of-Experts to Address Shortcut Shifts in Natural Language Understanding</span></p>
+            <p>with Ukyo Honda, Peinan Zhang, Masato Mita</p>
+            <p><span class="journal">Transactions of the Association for Computational Linguistics (TACL)</span>, forthcoming</p>
+            <p class="paper-links" data-links="TACL:https://tacl-link.com, Working Paper:https://working-paper-link.com">TACL|Working Paper</p>
+        </div>
+
+        <div class="paper publication">
+            <p><span class="article-title"></span>Bivariate Distribution Regression with Application to Insurance Data</span></p>  
+            <p>with Yunyun Wang and Dan Zhu</p>
+            <p><span class="journal">Insurance: Mathematics and Economics, 2023, 113, pp. 215-232</p>
+            <p class="paper-links" data-links="IME:https://doi.org/10.1016/j.insmatheco.2023.08.005, Working Paper:https://dx.doi.org/10.2139/ssrn.4065771">IME | Working Paper</p>  
+        </div>
+        
+        <h2>Conference Proceedings</h2>
+        <div class="paper conference-proceeding">
+            <p><span class="article-title">Estimating Distributional Treatment Effects in Randomized Experiments: Machine Learning for Variance Reduction</span></p>
+            <p>with Undral Byambadalai, Shota Yasui</p>
+            <p>International Conference on Machine Learning (ICML) 2024, July 2024</p>
+            <p class="paper-links" data-links="ICML:https://icml-link.com, Working Paper:https://working-paper-link.com, R-package:https://r-package-link.com">ICML | Working Paper | R-package</p>
+        </div>
+        
+        <h2>Working Papers</h2>
+        <div class="paper working-paper">
+            <p><span class="article-title">Regression Adjustment for Estimating Distributional Treatment Effects in Randomized Controlled Trials</span></p>
+            <p>with Shota Yasui, Yuta Hayakawa, Undral Byambadalai, July 2024</p>
+            <p class="paper-links" data-links="Working Paper:https://working-paper-link.com">Working Paper</p>
+        </div>
+    </div>
+
+    <div class="single-column">
+        <h2>Publications</h2>
+        <div class="publication">
+            <p><span class="article-title">Not Eliminate but Aggregate: Post-Hoc Control over Mixture-of-Experts to Address Shortcut Shifts in Natural Language Understanding</span></p>
+            <p>with Ukyo Honda, Peinan Zhang, Masato Mita</p>
+            <p><span class="journal">Transactions of the Association for Computational Linguistics (TACL)</span>, forthcoming</p>
+            <p>TACL | Working Paper</p>
+        </div>
+        <div class="publication">
+            <p><span class="article-title">Bivariate Distribution Regression with Application to Insurance Data</span></p>
+            <p>with Yunyun Wang and Dan Zhu</p>
+            <p><span class="journal">Insurance: Mathematics and Economics</span>, 2023, 113, pp. 215-232</p>
+            <p>IME | Working Paper</p>
+        </div>
+
+        <h2>Conference Proceedings</h2>
+        <div class="conference-proceeding">
+            <p><span class="article-title">Estimating Distributional Treatment Effects in Randomized Experiments: Machine Learning for Variance Reduction</span></p>
+            <p>with Undral Byambadalai, Shota Yasui</p>
+            <p>International Conference on Machine Learning (ICML) 2024, July 2024</p>
+            <p>ICML | Working Paper | R-package</p>
+        </div>
+        <div class="conference-proceeding">
+            <p><span class="article-title">Safe Collaborative Filtering</span></p>
+            <p>with Riku Togashi, Naoto Ohsaka, Tetsuro Morimura</p>
+            <p>International Conference on Learning Representations (ICLR) 2024, May 2024</p>
+            <p>ICLR | Working Paper</p>
+        </div>
+
+        <h2>Working Papers</h2>
+        <div class="working-paper">
+            <p><span class="article-title">Regression Adjustment for Estimating Distributional Treatment Effects in Randomized Controlled Trials</span></p>
+            <p>with Shota Yasui, Yuta Hayakawa, Undral Byambadalai, July 2024</p>
+            <p>Working Paper</p>
+        </div>
+        <div class="working-paper">
+            <p><span class="article-title">Inflation Target at Risk: A Time-Varying Parameter Distributional Regression</span></p>
+            <p>with Yunyun Wang and Dan Zhu, Mar 2024</p>
+            <p>Working Paper</p>
+        </div>
+
+        <h2>Research Grants</h2>
+        <div class="research-grant">
+            <p>Grant-in-Aid for Research Activity Start-up, 2023-2024</p>
+        </div>
+        <div class="research-grant">
+            <p>Australian Research Council (ARC) Discovery Projects (with Pierre Perron and Zhongjun Qu), 2021-2024</p>
+        </div>
+    </div>
+    <script>
+        function formatPaperLinks() {
+            const linkElements = document.querySelectorAll('.paper-links');
+            
+            linkElements.forEach(element => {
+                const links = element.dataset.links.split(', ');
+                const formattedLinks = links.map(link => {
+                    const [text, url] = link.split(':');
+                    return `<a href="${url}" class="paper-link">${text}</a>`;
+                }).join('<span class="separator"> | </span>');
+                
+                element.innerHTML = formattedLinks;
+            });
+        }
+        
+        // Run the function when the document is fully loaded
+        document.addEventListener('DOMContentLoaded', formatPaperLinks);
+    </script>
 </body>
 </html>
