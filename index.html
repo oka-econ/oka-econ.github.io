@@ -95,18 +95,16 @@
             padding-left: 0;
             list-style-type: none;
         }
-
         .academic-positions li {
             margin-bottom: 0.2em;
             display: flex;
             align-items: flex-start;
         }
-
         .academic-positions .year {
             min-width: 6.5em;
             display: inline-block;
             text-align: left;
-            margin-right: 0.5em;
+            margin-right: 0.01em;
         }
 
         <!-- Image-Related -->
@@ -125,6 +123,21 @@
         h1 {
             margin-top: 10px; /* Reduced from whatever it was before */
         }
+        .education-list {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.2em 0.5em;
+        }
+        .education-item {
+            display: contents;
+        }   
+        .degree {
+            font-weight: normal;
+        }
+
+        .university {
+            text-align: left;
+        }     
     </style>
 </head>
 <body>
@@ -150,10 +163,16 @@
         </div>
         <div class="right-column">
             <h2 class="education-heading">Education</h2>
-            <ul>
-                <li>Ph.D. (Economics), Boston University</li>
-                <li>M.A. (Economics), Osaka University</li>
-            </ul>
+            <div class="education-list">
+                <div class="education-item">
+                    <span class="degree">Ph.D. (Economics)</span>
+                    <span class="university">Boston University</span>
+                </div>
+                <div class="education-item">
+                    <span class="degree">M.A. (Economics)</span>
+                    <span class="university">Osaka University</span>
+                </div>
+            </div>
             <h2>Academic Positions</h2>
             <ul class="academic-positions">
                 <li><span class="year">2023-present:</span> Professor, Keio University</li>
