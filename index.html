@@ -91,9 +91,48 @@
                 width: 100%;
             }
         }
+        .academic-positions {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .academic-positions li {
+            margin-bottom: 0.2em;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .academic-positions .year {
+            min-width: 6.5em;
+            display: inline-block;
+            text-align: left;
+            margin-right: 0.5em;
+        }
+
+        <!-- Image-Related -->
+        .header-image {
+            width: 50%;
+            max-width: 1000px; /* matches your content max-width */
+            margin: 0 auto 20px; /* centers the image and adds space below */
+            overflow: hidden; /* ensures the image doesn't overflow */
+        }
+        .header-image img {
+            width: 1000px;
+            height: 150px;
+            margin: 0 auto 20px; /* centers the image and adds space below */
+            display: block;
+        }        
+        h1 {
+            margin-top: 10px; /* Reduced from whatever it was before */
+        }
     </style>
 </head>
 <body>
+    <div class="header-image">
+        <img src="figure/NYC.jpg" alt="NYC" width="100%">
+    </div>
+
+
     <h1>Tatsushi Oka</h1>
     <div class="info-container">
         <div class="left-column">
@@ -116,116 +155,247 @@
                 <li>M.A. (Economics), Osaka University</li>
             </ul>
             <h2>Academic Positions</h2>
-            <ul>
-                <li>2023-present: Professor, Keio University</li>
-                <li>2022-2023: Research Scientist, AI Lab, CyberAgent</li>
-                <li>2022-2023: Adj. Asso. Prof., Monash Business School</li>
-                <li>2019-2022: Asso. Professor, Monash Business School</li>
-                <li>2017-2018: Senior Lecturer, Monash Business School</li>
-                <li>2010-2017: Assistant Professor, National University of Singapore</li>
+            <ul class="academic-positions">
+                <li><span class="year">2023-present:</span> Professor, Keio University</li>
+                <li><span class="year">2022-2023:</span> Research Scientist, AI Lab, CyberAgent</li>
+                <li><span class="year">2022-2023:</span> Adj. Asso. Prof., Monash Business School</li>
+                <li><span class="year">2019-2022:</span> Asso. Professor, Monash Business School</li>
+                <li><span class="year">2017-2018:</span> Senior Lecturer, Monash Business School</li>
+                <li><span class="year">2010-2017:</span> Assistant Professor, National University of Singapore</li>
             </ul>
         </div>
     </div>
     
 
     <div class="single-column">
+
+
+        <!-- ----------- -->
+        <!-- Publication -->
+        <!-- ----------- -->
+
         <h2>Publications</h2>
-        <div class="paper publication">
+        <div class="publication">
             <p><span class="article-title">Not Eliminate but Aggregate: Post-Hoc Control over Mixture-of-Experts to Address Shortcut Shifts in Natural Language Understanding</span></p>
             <p>with Ukyo Honda, Peinan Zhang, Masato Mita</p>
             <p><span class="journal">Transactions of the Association for Computational Linguistics (TACL)</span>, forthcoming</p>
-            <p class="paper-links" data-links="TACL:https://tacl-link.com, Working Paper:https://working-paper-link.com">TACL|Working Paper</p>
+            <p>
+                <a href="https://transacl.org/index.php/tacl" class="paper-link" target="_blank" rel="noopener noreferrer">TACL</a> | 
+                <a href="http://dx.doi.org/10.2139/ssrn.4867631" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
         </div>
 
         <div class="paper publication">
-            <p><span class="article-title"></span>Bivariate Distribution Regression with Application to Insurance Data</span></p>  
+            <p><span class="article-title">Bivariate Distribution Regression with Application to Insurance Data</span></p>  
             <p>with Yunyun Wang and Dan Zhu</p>
             <p><span class="journal">Insurance: Mathematics and Economics, 2023, 113, pp. 215-232</p>
-            <p class="paper-links" data-links="IME:https://doi.org/10.1016/j.insmatheco.2023.08.005, Working Paper:https://dx.doi.org/10.2139/ssrn.4065771">IME | Working Paper</p>  
-        </div>
-        
-        <h2>Conference Proceedings</h2>
-        <div class="paper conference-proceeding">
-            <p><span class="article-title">Estimating Distributional Treatment Effects in Randomized Experiments: Machine Learning for Variance Reduction</span></p>
-            <p>with Undral Byambadalai, Shota Yasui</p>
-            <p>International Conference on Machine Learning (ICML) 2024, July 2024</p>
-            <p class="paper-links" data-links="ICML:https://icml-link.com, Working Paper:https://working-paper-link.com, R-package:https://r-package-link.com">ICML | Working Paper | R-package</p>
-        </div>
-        
-        <h2>Working Papers</h2>
-        <div class="paper working-paper">
-            <p><span class="article-title">Regression Adjustment for Estimating Distributional Treatment Effects in Randomized Controlled Trials</span></p>
-            <p>with Shota Yasui, Yuta Hayakawa, Undral Byambadalai, July 2024</p>
-            <p class="paper-links" data-links="Working Paper:https://working-paper-link.com">Working Paper</p>
-        </div>
-    </div>
-
-    <div class="single-column">
-        <h2>Publications</h2>
-        <div class="publication">
-            <p><span class="article-title">Not Eliminate but Aggregate: Post-Hoc Control over Mixture-of-Experts to Address Shortcut Shifts in Natural Language Understanding</span></p>
-            <p>with Ukyo Honda, Peinan Zhang, Masato Mita</p>
-            <p><span class="journal">Transactions of the Association for Computational Linguistics (TACL)</span>, forthcoming</p>
-            <p>TACL | Working Paper</p>
-        </div>
-        <div class="publication">
-            <p><span class="article-title">Bivariate Distribution Regression with Application to Insurance Data</span></p>
-            <p>with Yunyun Wang and Dan Zhu</p>
-            <p><span class="journal">Insurance: Mathematics and Economics</span>, 2023, 113, pp. 215-232</p>
-            <p>IME | Working Paper</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.insmatheco.2023.08.005"    class="paper-link" target="_blank" rel="noopener noreferrer">IME</a> | 
+                <a href="https://dx.doi.org/10.2139/ssrn.4065771" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
         </div>
 
+        <div class="publication">
+            <p><span class="article-title">Heterogeneous Impact of the Minimum Wage: Implications for Changes in Between- and Within-Group Inequality</span></p>
+            <p>with Ken Yamada</p>
+            <p><span class="journal">Journal of Human Resources</span>, 2023, 58(1), pp. 335-362.</p>
+            <p>
+                <a href="http://jhr.uwpress.org/content/58/1/335.abstract" class="paper-link" target="_blank" rel="noopener noreferrer">Journal of Human Resources</a> | 
+                <a href="http://dx.doi.org/10.2139/ssrn.3350843" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">The Effect of Human Mobility Restrictions on the COVID-19 Transmission Network in China</span></p>
+            <p>with Wei Wei and Dan Zhu</p>
+            <p>
+                <a href="https://doi.org/10.1371/journal.pone.0254403" class="paper-link" target="_blank" rel="noopener noreferrer">PLoS One</a>, July 2021
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Inference Related to Common Breaks in a Multivariate System with Joined Segmented Trends with Applications to Global and Hemispheric Temperatures</span></p>
+            <p>with Francisco Estrada, Dukpa Kim, Pierre Perron</p>
+            <p><span class="journal">Journal of Econometrics</span>, January 2020, 214(1), pp. 130-152.</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.jeconom.2019.05.008" class="paper-link" target="_blank" rel="noopener noreferrer">Journal of Econometrics</a> | 
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3184646" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Indirect Inference with a Non-Smooth Criterion Function</span></p>
+            <p>with David Frazier and Dan Zhu</p>
+            <p><span class="journal">Journal of Econometrics</span>, October 2019, 212(2), pp. 623-645.</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.jeconom.2019.06.003" class="paper-link">Journal of Econometrics</a> | 
+                <a href="https://ssrn.com/abstract=3226391" class="paper-link">Working Paper</a>
+            </p>
+        </div>
+
+        <div class="publication">
+            <p><span class="article-title">Quantile Treatment Effects in Difference in Differences Models under Dependence Restrictions and with only Two Time Periods</span></p>
+            <p>with Brantly Callaway and Tong Li</p>
+            <p><span class="journal">Journal of Econometrics</span>, October 2018, 206(2), pp. 395-413.</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.jeconom.2018.06.008" class="paper-link" target="_blank" rel="noopener noreferrer">Journal of Econometrics</a> | 
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2915947" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a> | 
+                <a href="https://bcallaway11.github.io/code/" class="paper-link" target="_blank" rel="noopener noreferrer">R-package</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Testing for Common Breaks in a Multiple Equations System</span></p>
+            <p>with Pierre Perron</p>
+            <p><span class="journal">Journal of Econometrics</span>, May 2018, 204(1) pp. 66–85.</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.jeconom.2018.01.003" class="paper-link" target="_blank" rel="noopener noreferrer">Journal of Econometrics</a> | 
+                <a href="https://ssrn.com/abstract=3099872" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">The Cross-Quantilogram: Measuring Quantile Dependence and Testing Directional Predictability between Time Series</span></p>
+            <p>with Heejoon Han, Oliver Linton and Yoon-Jae Whang</p>
+            <p><span class="journal">Journal of Econometrics</span>, July 2016, 193(1), pp. 251-270.</p>
+            <p>
+                <a href="http://www.sciencedirect.com/science/article/pii/S0304407616300458" class="paper-link" target="_blank" rel="noopener noreferrer">Journal of Econometrics</a> | 
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2338468" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a> | 
+                <a href="https://cran.r-project.org/package=quantilogram" class="paper-link" target="_blank" rel="noopener noreferrer">R-package</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Set Identification of the Censored Quantile Regression Model for Short Panels with Fixed Effects</span></p>
+            <p>with Tong Li</p>
+            <p><span class="journal">Journal of Econometrics</span>, October 2015, 188(2), pp. 363–377.</p>
+            <p>
+                <a href="http://www.sciencedirect.com/science/article/pii/S0304407615000743" class="paper-link" target="_blank" rel="noopener noreferrer">Journal of Econometrics</a> | 
+                <a href="http://dx.doi.org/10.1016/j.jeconom.2015.03.005" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Divorce Law Reforms and Divorce Rates in the U.S.: An Interactive Fixed Effects Approach</span></p>
+            <p>with Dukpa Kim</p>
+            <p><span class="journal">Journal of Applied Econometrics</span>, March 2014, 29(2), pp. 231-245.</p>
+            <p>
+                <a href="http://onlinelibrary.wiley.com/doi/10.1002/jae.2310/abstract" class="paper-link" target="_blank" rel="noopener noreferrer">Journal of Applied Econometrics</a> | 
+                <a href="https://www.researchgate.net/publication/260678173_Divorce_law_reforms_and_divorce_rates_in_the_USA_An_interactive_fixed-effects_approach" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Estimating Structural Changes in Regression Quantiles</span></p>
+            <p>with Zhongjun Qu</p>
+            <p><span class="journal">Journal of Econometrics</span>, June 2011, 162(2), pp. 248-267.</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.jeconom.2011.01.005" class="paper-link" target="_blank" rel="noopener noreferrer">Journal of Econometrics</a> | 
+                <a href="https://ssrn.com/abstract=1656453" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a> | 
+                <a href="http://people.bu.edu/qu/quantest/code.zip" class="paper-link" target="_blank" rel="noopener noreferrer">R-code</a>
+            </p>
+        </div>
+
+
+        <!-- ----------- -->
+        <!-- Proceedings -->
+        <!-- ----------- -->
         <h2>Conference Proceedings</h2>
-        <div class="conference-proceeding">
+
+        <div class="publication conference-proceeding">
             <p><span class="article-title">Estimating Distributional Treatment Effects in Randomized Experiments: Machine Learning for Variance Reduction</span></p>
             <p>with Undral Byambadalai, Shota Yasui</p>
-            <p>International Conference on Machine Learning (ICML) 2024, July 2024</p>
-            <p>ICML | Working Paper | R-package</p>
+            <p><span class="journal">International Conference on Machine Learning (ICML) 2024</span>, July 2024</p>
+            <p>
+                <a href="https://proceedings.mlr.press/v235/byambadalai24a.html" class="paper-link" target="_blank" rel="noopener noreferrer">ICML</a> | 
+                <a href="https://ssrn.com/abstract=4910058" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a> | 
+                <a href="https://github.com/CyberAgentAILab/dte-ml-adjustment" class="paper-link" target="_blank" rel="noopener noreferrer">R-package</a>
+            </p>
         </div>
-        <div class="conference-proceeding">
+    
+        <div class="publication conference-proceeding">
             <p><span class="article-title">Safe Collaborative Filtering</span></p>
             <p>with Riku Togashi, Naoto Ohsaka, Tetsuro Morimura</p>
-            <p>International Conference on Learning Representations (ICLR) 2024, May 2024</p>
-            <p>ICLR | Working Paper</p>
+            <p><span class="journal">International Conference on Learning Representations (ICLR) 2024</span>, May 2024</p>
+            <p>
+                <a href="https://openreview.net/pdf?id=yarUvgEXq3" class="paper-link" target="_blank" rel="noopener noreferrer">ICLR</a> | 
+                <a href="https://dx.doi.org/10.2139/ssrn.4767721" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
         </div>
-
+        
+        
+        <!-- ------------- -->
+        <!-- Working Paper -->
+        <!-- ------------- -->
         <h2>Working Papers</h2>
-        <div class="working-paper">
+
+        <div class="publication working-paper">
             <p><span class="article-title">Regression Adjustment for Estimating Distributional Treatment Effects in Randomized Controlled Trials</span></p>
             <p>with Shota Yasui, Yuta Hayakawa, Undral Byambadalai, July 2024</p>
-            <p>Working Paper</p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4899404" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
         </div>
-        <div class="working-paper">
+    
+        <div class="publication working-paper">
             <p><span class="article-title">Inflation Target at Risk: A Time-Varying Parameter Distributional Regression</span></p>
             <p>with Yunyun Wang and Dan Zhu, Mar 2024</p>
-            <p>Working Paper</p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4764340" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication working-paper">
+            <p><span class="article-title">Distributional Vector Autoregression: Eliciting Macro and Financial Dependence</span></p>
+            <p>with Yunyun Wang and Dan Zhu, Feb 2023</p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4382497" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication working-paper">
+            <p><span class="article-title">Estimation of Heterogeneous Treatment Effects Using Quantile Regression with Interactive Fixed Effects</span></p>
+            <p>with Ruofan Xu, Jiti Gao and Yoon-Jae Whang, August 2022</p>
+            <p>
+                <a href="https://ssrn.com/abstract=4182257" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
         </div>
 
+        <div class="publication working-paper">
+            <p><span class="article-title">Semiparametric Single-Index Estimation for Average Treatment Effects</span></p>
+            <p>with Difang Huang and Jiti Gao, June 2022</p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4134564" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+
         <h2>Research Grants</h2>
-        <div class="research-grant">
-            <p>Grant-in-Aid for Research Activity Start-up, 2023-2024</p>
+
+        <div class="publication research-grant">
+            <p><span class="grant-title">Grant-in-Aid for Scientific Research (C) (24K04821)</span>, 2024-2027</p>
         </div>
-        <div class="research-grant">
-            <p>Australian Research Council (ARC) Discovery Projects (with Pierre Perron and Zhongjun Qu), 2021-2024</p>
+
+        <div class="publication research-grant">
+            <p><span class="grant-title">Grant-in-Aid for Research Activity Start-up (23K18807)</span>, 2023-2024</p>
         </div>
+    
+        <div class="publication research-grant">
+            <p><span class="grant-title">Australian Research Council (ARC) Discovery Projects</span> (with Pierre Perron and Zhongjun Qu), 2021-2024</p>
+        </div>
+    
+        <div class="publication research-grant">
+            <p><span class="grant-title">Australian Research Council (ARC) Discovery Projects</span> (with Tong Li), 2019-2022</p>
+        </div>
+    
+        <div class="publication research-grant">
+            <p><span class="grant-title">Academic Research Fund (Tier 1), Ministry of Education, Singapore</span>, 2016-2019</p>
+        </div>
+    
+        <div class="publication research-grant">
+            <p><span class="grant-title">Academic Research Fund (Tier 1), Ministry of Education, Singapore</span>, 2013-2016</p>
+        </div>        
+
     </div>
-    <script>
-        function formatPaperLinks() {
-            const linkElements = document.querySelectorAll('.paper-links');
-            
-            linkElements.forEach(element => {
-                const links = element.dataset.links.split(', ');
-                const formattedLinks = links.map(link => {
-                    const [text, url] = link.split(':');
-                    return `<a href="${url}" class="paper-link">${text}</a>`;
-                }).join('<span class="separator"> | </span>');
-                
-                element.innerHTML = formattedLinks;
-            });
-        }
-        
-        // Run the function when the document is fully loaded
-        document.addEventListener('DOMContentLoaded', formatPaperLinks);
-    </script>
 </body>
 </html>
