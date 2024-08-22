@@ -84,7 +84,7 @@
             font-weight: normal; /* Normal weight for the separator */
             margin: 0 0.1em; /* Add some space around the separator */
         }
-        @media (max-width: 768px) {
+        @media (max-width: 708px) {
             .info-container {
                 flex-direction: column;
             }
@@ -110,15 +110,16 @@
 
         <!-- Image-Related -->
         .header-image {
-            width: 50%;
+            width: 100%;
             max-width: 1000px; /* matches your content max-width */
             margin: 0 auto 20px; /* centers the image and adds space below */
             overflow: hidden; /* ensures the image doesn't overflow */
         }
         .header-image img {
-            width: 1000px;
-            height: 250px;
-            margin: 0 auto 20px; /* centers the image and adds space below */
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
             display: block;
         }        
         h1 {
