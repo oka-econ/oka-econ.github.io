@@ -23,7 +23,7 @@
             padding: 20px;
             font-size: 16px;
         }
-        h1, h2, h3, h4, h5, h6, .affiliation-heading, .education-heading {
+        h1, h2, h3, h4, h5, h6, .affiliation-heading, .education-heading, .field-heading .academic-positions{
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
             line-height: 1.1; /* Reduced line height */
@@ -58,7 +58,7 @@
         .single-column h2 {
            margin-top: 1.5em; 
         }
-        h2 .affiliation-heading, .education-heading {
+        h2 .affiliation-heading, .education-heading, .field-heading .academic-positions{
             font-size: 1.2em;
             margin-top: 0;
             margin-bottom: 0.5em;
@@ -165,8 +165,22 @@
         h1 {
     margin-top: 10px; /* Reduced from whatever it was before */
 }
+
+.field-heading {
+    margin-top: 20px; /* Added to create space above Research Field */
+}
+.field-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.2em 0.5em;
+    line-height: 1.1; /* Added to match other sections */
+}
+.field-item {
+    display: contents;
+}
+
 .education-heading {
-    margin-top: 30px; /* Added to create space above Education */
+    margin-top: 20px; /* Added to create space above Education */
 }
 .education-list {
     display: grid;
@@ -190,6 +204,18 @@
  
     </style>
 </head>
+
+<style>
+    code {
+        font-family: monospace;
+        background-color: #f5f5f5;
+        padding: 2px 4px;
+        border-radius: 3px;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        display: inline-block;  /* Needed for shadow to show properly */
+    }
+</style>
+
 <body>
     <div class="header-image">
         <img src="https://oka-econ.github.io/figure/Sea.jpg" alt="sea" width="100%">
@@ -199,15 +225,36 @@
     <h1>Tatsushi Oka</h1>
     <div class="info-container">
         <div class="left-column">
-            <h2 class="affiliation-heading">Affiliation</h2>
+            <h3 class="affiliation-heading">Affiliation</h3>
             <ul>
                 <li>Department of Economics</li>
                 <li>Keio University</li>
                 <li>Mita 2-15-45, Minato</li>
                 <li>Tokyo, Japan, 108-0073</li>
-                <li>Email: tatsushi.oka[at]keio.jp</li>
+                <li>Email: tatsushi.oka <code>at</code> keio <code>dot</code> jp</li>
             </ul>
-            <h2 class="education-heading">Education</h2>
+            <h3 class="field-heading">Research Field</h3>
+            <ul class="field-list">
+                <li class="field-item">
+                    <span class="field">Theoretical and Applied Econometrics</span>
+                    <span class="field"></span>
+                </li>
+                <li class="field-item">
+                    <span class="field">Machine Learning</span>
+                    <span class="field"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="right-column">
+            <h3>Academic Positions</h3>
+            <ul class="academic-positions">
+                <li><span class="year">2023-present:</span> Professor, Keio University</li>
+                <li><span class="year">2022-2023:</span> Research Scientist, AI Lab, CyberAgent</li>
+                <li><span class="year">2019-2023:</span> Asso. Professor, Monash Business School</li>
+                <li><span class="year">2017-2018:</span> Senior Lecturer, Monash Business School</li>
+                <li><span class="year">2010-2017:</span> Assistant Professor, National University of Singapore</li>
+            </ul>
+            <h3 class="education-heading">Education</h3>
             <div class="education-list">
                 <div class="education-item">
                     <span class="degree">Ph.D. (Economics)</span>
@@ -219,23 +266,48 @@
                 </div>
             </div>
         </div>
-        <div class="right-column">
-            <h2>Academic Positions</h2>
-            <ul class="academic-positions">
-                <li><span class="year">2023-present:</span> Professor, Keio University</li>
-                <li><span class="year">2022-2023:</span> Research Scientist, AI Lab, CyberAgent</li>
-                <li><span class="year">2022-2023:</span> Adj. Asso. Prof., Monash Business School</li>
-                <li><span class="year">2019-2022:</span> Asso. Professor, Monash Business School</li>
-                <li><span class="year">2017-2018:</span> Senior Lecturer, Monash Business School</li>
-                <li><span class="year">2010-2017:</span> Assistant Professor, National University of Singapore</li>
-            </ul>
-            <h2>Research Field</h2>
-            <p>Theoretical and Applied Econometrics</p>
-            <p>Machine Learning</p>
-        </div>
     </div>    
 
+
     <div class="single-column">
+
+        <!-- ------------- -->
+        <!-- Working Paper -->
+        <!-- ------------- -->
+        <h2>Working Papers</h2>
+
+        <div class="publication working-paper">
+            <p><span class="article-title">Regression Adjustment for Estimating Distributional Treatment Effects in Randomized Controlled Trials</span></p>
+            <p>with Shota Yasui, Yuta Hayakawa, Undral Byambadalai, July 2024</p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4899404" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication working-paper">
+            <p><span class="article-title">Inflation Target at Risk: A Time-Varying Parameter Distributional Regression</span></p>
+            <p>with Yunyun Wang and Dan Zhu, Mar 2024</p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4764340" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication working-paper">
+            <p><span class="article-title">Distributional Vector Autoregression: Eliciting Macro and Financial Dependence</span></p>
+            <p>with Yunyun Wang and Dan Zhu, Feb 2023</p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4382497" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
+    
+
+        <div class="publication working-paper">
+            <p><span class="article-title">Semiparametric Single-Index Estimation for Average Treatment Effects</span></p>
+            <p>with Difang Huang and Jiti Gao, June 2022</p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4134564" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
+            </p>
+        </div>
 
 
         <!-- ----------- -->
@@ -412,46 +484,17 @@
         </div>
         
         
-        <!-- ------------- -->
-        <!-- Working Paper -->
-        <!-- ------------- -->
-        <h2>Working Papers</h2>
-
-        <div class="publication working-paper">
-            <p><span class="article-title">Regression Adjustment for Estimating Distributional Treatment Effects in Randomized Controlled Trials</span></p>
-            <p>with Shota Yasui, Yuta Hayakawa, Undral Byambadalai, July 2024</p>
+        <h3 class="Links">Links</h3>
+        <ul>
             <p>
-                <a href="https://dx.doi.org/10.2139/ssrn.4899404" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
-            </p>
-        </div>
-    
-        <div class="publication working-paper">
-            <p><span class="article-title">Inflation Target at Risk: A Time-Varying Parameter Distributional Regression</span></p>
-            <p>with Yunyun Wang and Dan Zhu, Mar 2024</p>
-            <p>
-                <a href="https://dx.doi.org/10.2139/ssrn.4764340" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
-            </p>
-        </div>
-    
-        <div class="publication working-paper">
-            <p><span class="article-title">Distributional Vector Autoregression: Eliciting Macro and Financial Dependence</span></p>
-            <p>with Yunyun Wang and Dan Zhu, Feb 2023</p>
-            <p>
-                <a href="https://dx.doi.org/10.2139/ssrn.4382497" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
-            </p>
-        </div>
+                <a href="https://arxiv.org/a/oka_t_1.html"><i class="ai ai-arxiv ai-fw" target="_blank" rel="noopener noreferrer"></i> arXiv</a> | 
+                <a href="https://orcid.org/0000-0002-8868-6136"><i class="Link" target="_blank" rel="noopener noreferrer"></i> ORCID</a> | 
+                <a href="https://www.webofscience.com/wos/author/record/HTR-1004-2023"><i class="Link" target="_blank" rel="noopener noreferrer"></i> Web of Science</a> | 
+            </p> 
+        </ul>
     
 
-        <div class="publication working-paper">
-            <p><span class="article-title">Semiparametric Single-Index Estimation for Average Treatment Effects</span></p>
-            <p>with Difang Huang and Jiti Gao, June 2022</p>
-            <p>
-                <a href="https://dx.doi.org/10.2139/ssrn.4134564" class="paper-link" target="_blank" rel="noopener noreferrer">Working Paper</a>
-            </p>
-        </div>
-    
-
-        <h2>Research Grants</h2>
+        <h3>Research Grants</h3>
 
         <div class="publication research-grant">
             <p><span class="grant-title">Grant-in-Aid for Scientific Research (C) (24K04821)</span>, 2024-2027</p>
