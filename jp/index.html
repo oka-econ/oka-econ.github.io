@@ -2,33 +2,752 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Tatsushi Oka's academic portfolio and research work.">
+    <meta name="keywords" content="Tatsushi Oka, Econometrics, Machine Learning, Economics, Research, Academic, Portfolio">
+    <meta name="author" content="Tatsushi Oka">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>あなたの名前 - ホームページ</title>
-    <!-- You can link to the same CSS as your main page if you want -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="robots" content="index, follow">       <!-- Robots -->
+    <meta property="og:title" content="Tatsushi Oka - Homepage">
+    <meta property="og:site_name" content="Tatsushi Oka - Homepage">
+    <meta property="og:description" content="Academic portfolio and research work of Tatsushi Oka, Econometrics, Machine Learning">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oka-econ.github.io">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <title>Tatsushi Oka - Homepage</title>
+
+    <!-- Add Google Fonts for Japanese text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+        
+    <style> 
+        body {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400; 
+            line-height: 1.5;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 16px;
+        }
+        h1, h2, h3, h4, h5, h6, .affiliation-heading, .education-heading, .field-heading .academic-positions{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            line-height: 1.1; /* Reduced line height */
+            margin-top: 0.5em; /* Adjust top margin */
+            margin-bottom: 0.2em; /* Adjust bottom margin */
+        }
+        h1 {
+            color: #072442;
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+            line-height: 1.1;
+        }
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 5%;
+            align-items: flex-start;
+        }
+        .left-column {
+            width: 35%; /* Adjusted from calc(50% - 10px) */
+        }
+        .right-column {
+           width: 60%; /* Adjusted from calc(50% - 10px) */
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 0.5em;
+            margin-bottom: 0.2em;
+            font-size: 1.2em;
+            line-height: 1.1;
+        }
+        .single-column h2 {
+           margin-top: 1.5em; 
+        }
+        h2 .affiliation-heading, .education-heading, .field-heading .academic-positions{
+            font-size: 1.2em;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+        ul, p {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0.2em;
+        }
+        ul li, p {
+            font-size: 1em;
+            line-height: 1.2; /* Added to reduce gap between lines in lists */
+        }
+        .single-column {
+            margin-top: 1em;
+        }
+        .publication, .conference-proceeding, .working-paper, .Links, .research-grant {
+            margin-top: 0.5em; 
+            margin-bottom: 0.5em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        .publication-list {
+            counter-reset: publication-counter;
+            margin-top: 0.5em; 
+            padding-left: 0.5em;
+            position: relative;
+        }
+        .publication::before {
+            counter-increment: publication-counter;
+            content: counter(publication-counter) ".";
+            position: absolute;
+            left: -0.8em;
+            width: 1.8em;
+            text-align: right;
+            color: #16354a;
+            font-weight: normal;
+        }       
+/* Square bullet for Working Papers */
+.working-paper::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    width: 1.5em;
+    text-align: right;
+    color: #16354a;
+    font-size: 0.8em; /* Adjust size if needed */
+    top: 0.1em; /* Adjust vertical alignment */
+}
+
+
+
+        .publication p, .working-paper p, .research-grant p {
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+        }
+        .article-title {
+            font-weight: bold;
+        }
+        .journal {
+            font-style: italic;
+        }    
+        .paper-link {
+            font-weight: 550; /* Slightly bold */
+            color: #17528d; /* Dark blue color, you can change this */
+            text-decoration: none; /* Removes underline from links */
+        }
+        .paper-link:hover {
+            text-decoration: underline; /* Adds underline on hover */
+        }
+        .separator {
+            font-weight: normal; /* Normal weight for the separator */
+            margin: 0 0.1em; /* Add some space around the separator */
+        }
+        @media (max-width: 708px) {
+            .info-container {
+                flex-direction: column;
+            }
+            .left-column, .right-column {
+                width: 100%;
+            }
+        }
+        .academic-positions {
+            padding-left: 0;
+            list-style-type: none;
+        }
+        .academic-positions li {
+            margin-bottom: 0.2em;
+            display: flex;
+            align-items: flex-start;
+        }
+        .academic-positions .year {
+            min-width: 6.5em;
+            display: inline-block;
+            text-align: left;
+            margin-right: 0.01em;
+        }
+        .publication.research-grant::before {
+            content: "•"; /* Bullet character */
+            font-size: 1.5em; /* Increase bullet size */
+            margin-right: 0.5em; /* Space between bullet and text */
+            line-height: 0.7; /* Match this with the paragraph line-height */
+        }
+        .publication.research-grant p {
+            line-height: 1.0; /* Adjust this value to control the space between lines */
+            margin-bottom: 0.5em; /* Keeps some space between different grants */
+        }        
+        
+        <!-- Image-Related -->
+        .header-image {
+            width: 100%;
+            max-width: 700px; /* matches your content max-width */
+            margin: 0 auto 20px; /* centers the image and adds space below */
+            overflow: hidden; /* ensures the image doesn't overflow */
+        }
+        .header-image img {
+            width: 85%;
+            height: auto;
+            max-height: 260px;
+            object-fit: cover;
+            display: block;
+        }        
+        .header-image + * {
+           margin-top: 20px;
+        }
+        
+        h1 {
+    margin-top: 10px; /* Reduced from whatever it was before */
+}
+
+.field-heading {
+    margin-top: 20px; /* Added to create space above Research Field */
+}
+.field-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.2em 0.5em;
+    line-height: 1.1; /* Added to match other sections */
+}
+.field-item {
+    display: contents;
+}
+
+.education-heading {
+    margin-top: 20px; /* Added to create space above Education */
+}
+.education-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.2em 0.5em;
+    line-height: 1.1; /* Added to match other sections */
+}
+.education-item {
+    display: contents;
+}  
+.degree, .university {
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+}
+.degree {
+    font-weight: normal;
+}
+.university {
+    text-align: left;
+}
+ 
+    </style>
 </head>
+
+<style>
+    code {
+        font-family: monospace;
+        background-color: #f5f5f5;
+        padding: 2px 4px;
+        border-radius: 3px;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        display: inline-block;  /* Needed for shadow to show properly */
+    }
+</style>
+
+
+<!-- file-icon -->
+<svg style="display: none;">
+    <symbol id="file-icon" viewBox="0 0 24 24">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <polyline points="14 2 14 8 20 8"></polyline>
+      <line x1="16" y1="13" x2="8" y2="13"></line>
+      <line x1="16" y1="17" x2="8" y2="17"></line>
+      <polyline points="10 9 9 9 8 9"></polyline>
+    </symbol>
+</svg>
+
+<!-- Link icon -->
+<svg style="display: none;">
+    <!-- File icon -->
+    <symbol id="file-icon" viewBox="0 0 24 24">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <polyline points="14 2 14 8 20 8"></polyline>
+      <line x1="16" y1="13" x2="8" y2="13"></line>
+      <line x1="16" y1="17" x2="8" y2="17"></line>
+      <polyline points="10 9 9 9 8 9"></polyline>
+    </symbol>
+  </svg>
+
+<!------------------>
+<!-- Main Page    -->
+<!------------------>
 <body>
-    <header>
-        <h1>あなたの名前</h1>
-        <nav>
+    <div class="header-image">
+        <img src="https://oka-econ.github.io/figure/Sea.jpg" alt="sea" width="100%">
+    </div>
+
+
+    <h1>岡 達志</h1>
+    <div class="info-container">
+        <div class="left-column">
+            <h3 class="affiliation-heading">所属</h3>
             <ul>
-                <li><a href="../index.html">English</a></li>
-                <li><a href="index.html">日本語</a></li>
-                <!-- Add other navigation items as needed -->
+                <li>慶應大学</li>
+                <li>経済学部</li>
+                <li>東京港区三田2-15-45</li>
+                <li>〒108-0073</li>
+                <li>Email: tatsushi.oka <code>at</code> keio <code>dot</code> jp</li>
             </ul>
-        </nav>
-    </header>
+            <h3 class="field-heading">Research Field</h3>
+            <ul class="field-list">
+                <li class="field-item">
+                    <span class="field">Theoretical and Applied Econometrics</span>
+                    <span class="field"></span>
+                </li>
+                <li class="field-item">
+                    <span class="field">Machine Learning</span>
+                    <span class="field"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="right-column">
+            <h3>Academic Positions</h3>
+            <ul class="academic-positions">
+                <li><span class="year">2023-present:</span> Professor, Keio University</li>
+                <li><span class="year">2022-2023:</span> Research Scientist, AI Lab, CyberAgent</li>
+                <li><span class="year">2019-2023:</span> Asso. Professor, Monash Business School</li>
+                <li><span class="year">2017-2018:</span> Senior Lecturer, Monash Business School</li>
+                <li><span class="year">2010-2017:</span> Assistant Professor, National University of Singapore</li>
+            </ul>
+            <h3 class="education-heading">Education</h3>
+            <div class="education-list">
+                <div class="education-item">
+                    <span class="degree">Ph.D. (Economics)</span>
+                    <span class="university">Boston University</span>
+                </div>
+                <div class="education-item">
+                    <span class="degree">M.A. (Economics)</span>
+                    <span class="university">Osaka University</span>
+                </div>
+            </div>
+        </div>
+    </div>    
 
-    <main>
-        <section>
-            <h2>ようこそ</h2>
-            <p>こんにちは、ここは私の日本語ページです。</p>
-            <!-- Add your Japanese content here -->
-        </section>
-    </main>
 
-    <footer>
-        <p>© 2025 あなたの名前</p>
-    </footer>
+    <div class="single-column">
+
+        <!-- ------------- -->
+        <!-- Working Paper -->
+        <!-- ------------- -->
+        <h2>Working Papers</h2>
+
+    
+        <div class="publication working-paper">
+            <p><span class="article-title">Inflation Target at Risk: A Time-Varying Parameter Distributional Regression</span></p>
+            <p>with Yunyun Wang and Dan Zhu, Mar 2024</p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4764340" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication working-paper">
+            <p><span class="article-title">Distributional Vector Autoregression: Eliciting Macro and Financial Dependence</span></p>
+            <p>with Yunyun Wang and Dan Zhu, Feb 2023</p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4382497" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                </svg>Working Paper</a>
+            </p>
+        </div>
+    
+
+
+
+        <!-- ----------- -->
+        <!-- Publication -->
+        <!-- ----------- -->
+
+        <h2>Publications and Conference Proceedings</h2>
+        <div class="publication-list">
+
+        <div class="publication">
+            <p><span class="article-title">Regression Adjustment for Estimating Distributional Treatment Effects in Randomized Controlled Trials</span></p>
+            <p>with Shota Yasui, Yuta Hayakawa, Undral Byambadalai</p>
+            <p><span class="journal">Econometric Reviews</span>, forthcoming </p>
+            <p>
+                <a href="https://dx.doi.org/10.2139/ssrn.4899404" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                </svg>Working Paper</a>
+            </p>
+        </div>
+
+        <div class="publication">
+            <p><span class="article-title">Semiparametric Single-Index Estimation for Average Treatment Effects</span></p>
+            <p>with Difang Huang and Jiti Gao</p>
+            <p><span class="journal">Econometric Reviews</span>, 2025 </p>
+            <p>
+                <a href="https://doi.org/10.1080/07474938.2025.2457561" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>Econometric Reviews</a> |
+                <a href="https://dx.doi.org/10.2139/ssrn.4134564" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                </svg>Working Paper</a>
+            </p>
+        </div>
+        
+
+        <div class="publication">
+            <p><span class="article-title">Estimation of Heterogeneous Treatment Effects Using Quantile Regression with Interactive Fixed Effects</span></p>
+            <p>with Ruofan Xu, Jiti Gao and Yoon-Jae Whang</p>
+            <p><span class="journal">Econometric Reviews</span>, 2025, 44(5), pp. 630-648. <p></p>
+            <p>
+                <a href="https://doi.org/10.1080/07474938.2024.2433688" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Econometric Reviews</a> |
+                <a href="https://ssrn.com/abstract=4182257" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+
+
+        <div class="publication">
+            <p><span class="article-title">Not Eliminate but Aggregate: Post-Hoc Control over Mixture-of-Experts to Address Shortcut Shifts in Natural Language Understanding</span></p>
+            <p>with Ukyo Honda, Peinan Zhang, Masato Mita</p>
+            <p><span class="journal">Transactions of the Association for Computational Linguistics</span>, 2024, 12, pp. 1268–1289</p>
+            <p>
+                <a href="https://doi.org/10.1162/tacl_a_00701" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>TACL</a> | 
+                <a href="http://dx.doi.org/10.2139/ssrn.4867631" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+
+        <div class="publication">
+            <p><span class="article-title">Estimating Distributional Treatment Effects in Randomized Experiments: Machine Learning for Variance Reduction</span></p>
+            <p>with Undral Byambadalai, Shota Yasui</p>
+            <p><span class="journal">Proceeding of International Conference on Machine Learning</span>, July 2024</p>
+            <p>
+                <a href="https://proceedings.mlr.press/v235/byambadalai24a.html" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>ICML</a> | 
+                <a href="https://ssrn.com/abstract=4910058" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a> | 
+                <a href="https://github.com/CyberAgentAILab/dte-ml-adjustment" class="paper-link" target="_blank" rel="noopener noreferrer">R-code</a>
+            </p>
+        </div>
+
+
+        <div class="publication">
+            <p><span class="article-title">Safe Collaborative Filtering</span></p>
+            <p>with Riku Togashi, Naoto Ohsaka, Tetsuro Morimura</p>
+            <p><span class="journal">Proceedings of the International Conference on Learning Representations</span>, May 2024</p>
+            <p>
+                <a href="https://openreview.net/pdf?id=yarUvgEXq3" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>ICLR</a> | 
+                <a href="https://dx.doi.org/10.2139/ssrn.4767721" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+
+        <div class="publication">
+            <p><span class="article-title">Bivariate Distribution Regression with Application to Insurance Data</span></p>  
+            <p>with Yunyun Wang and Dan Zhu</p>
+            <p><span class="journal">Insurance: Mathematics and Economics, 2023, 113, pp. 215-232</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.insmatheco.2023.08.005"    class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>IME</a> | 
+                <a href="https://dx.doi.org/10.2139/ssrn.4065771" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+
+        <div class="publication">
+            <p><span class="article-title">Heterogeneous Impact of the Minimum Wage: Implications for Changes in Between- and Within-Group Inequality</span></p>
+            <p>with Ken Yamada</p>
+            <p><span class="journal">Journal of Human Resources</span>, 2023, 58(1), pp. 335-362.</p>
+            <p>
+                <a href="http://jhr.uwpress.org/content/58/1/335.abstract" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Journal of Human Resources</a> | 
+                <a href="http://dx.doi.org/10.2139/ssrn.3350843" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">The Effect of Human Mobility Restrictions on the COVID-19 Transmission Network in China</span></p>
+            <p>with Wei Wei and Dan Zhu</p>
+            <p>
+                <a href="https://doi.org/10.1371/journal.pone.0254403" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>PLoS One</a>, July 2021
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Inference Related to Common Breaks in a Multivariate System with Joined Segmented Trends with Applications to Global and Hemispheric Temperatures</span></p>
+            <p>with Francisco Estrada, Dukpa Kim, Pierre Perron</p>
+            <p><span class="journal">Journal of Econometrics</span>, January 2020, 214(1), pp. 130-152.</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.jeconom.2019.05.008" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Journal of Econometrics</a> | 
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3184646" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Indirect Inference with a Non-Smooth Criterion Function</span></p>
+            <p>with David Frazier and Dan Zhu</p>
+            <p><span class="journal">Journal of Econometrics</span>, October 2019, 212(2), pp. 623-645.</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.jeconom.2019.06.003" class="paper-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Journal of Econometrics</a> | 
+                <a href="https://ssrn.com/abstract=3226391" class="paper-link">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+
+        <div class="publication">
+            <p><span class="article-title">Quantile Treatment Effects in Difference in Differences Models under Dependence Restrictions and with only Two Time Periods</span></p>
+            <p>with Brantly Callaway and Tong Li</p>
+            <p><span class="journal">Journal of Econometrics</span>, October 2018, 206(2), pp. 395-413.</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.jeconom.2018.06.008" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Journal of Econometrics</a> | 
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2915947" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a> | 
+                <a href="https://bcallaway11.github.io/code/" class="paper-link" target="_blank" rel="noopener noreferrer">R-package</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Testing for Common Breaks in a Multiple Equations System</span></p>
+            <p>with Pierre Perron</p>
+            <p><span class="journal">Journal of Econometrics</span>, May 2018, 204(1) pp. 66–85.</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.jeconom.2018.01.003" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Journal of Econometrics</a> | 
+                <a href="https://ssrn.com/abstract=3099872" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">The Cross-Quantilogram: Measuring Quantile Dependence and Testing Directional Predictability between Time Series</span></p>
+            <p>with Heejoon Han, Oliver Linton and Yoon-Jae Whang</p>
+            <p><span class="journal">Journal of Econometrics</span>, July 2016, 193(1), pp. 251-270.</p>
+            <p>
+                <a href="http://www.sciencedirect.com/science/article/pii/S0304407616300458" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Journal of Econometrics</a> | 
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2338468" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a> | 
+                <a href="https://cran.r-project.org/package=quantilogram" class="paper-link" target="_blank" rel="noopener noreferrer">R-package</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Set Identification of the Censored Quantile Regression Model for Short Panels with Fixed Effects</span></p>
+            <p>with Tong Li</p>
+            <p><span class="journal">Journal of Econometrics</span>, October 2015, 188(2), pp. 363–377.</p>
+            <p>
+                <a href="http://www.sciencedirect.com/science/article/pii/S0304407615000743" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Journal of Econometrics</a> | 
+                <a href="http://dx.doi.org/10.1016/j.jeconom.2015.03.005" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Divorce Law Reforms and Divorce Rates in the U.S.: An Interactive Fixed Effects Approach</span></p>
+            <p>with Dukpa Kim</p>
+            <p><span class="journal">Journal of Applied Econometrics</span>, March 2014, 29(2), pp. 231-245.</p>
+            <p>
+                <a href="http://onlinelibrary.wiley.com/doi/10.1002/jae.2310/abstract" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Journal of Applied Econometrics</a> | 
+                <a href="https://www.researchgate.net/publication/260678173_Divorce_law_reforms_and_divorce_rates_in_the_USA_An_interactive_fixed-effects_approach" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a>
+            </p>
+        </div>
+    
+        <div class="publication">
+            <p><span class="article-title">Estimating Structural Changes in Regression Quantiles</span></p>
+            <p>with Zhongjun Qu</p>
+            <p><span class="journal">Journal of Econometrics</span>, June 2011, 162(2), pp. 248-267.</p>
+            <p>
+                <a href="https://doi.org/10.1016/j.jeconom.2011.01.005" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Journal of Econometrics</a> | 
+                <a href="https://ssrn.com/abstract=1656453" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                    </svg>Working Paper</a> | 
+                <a href="https://sites.bu.edu/qu/files/2023/07/qrbreak.zip" class="paper-link" target="_blank" rel="noopener noreferrer">R-code</a>
+            </p>
+        </div>
+
+        <div class="publication">
+            <p><span class="article-title">Juvenile Crime and Punishment: Evidence from Japan</span></p>
+            <p><span class="journal">Applied Economics</span>, 2009, 41(24), pp. 3103-3115.</p>
+            <p>
+                <a href="https://www.tandfonline.com/doi/pdf/10.1080/00036840701365923" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>Applied Economics</a> 
+            </p>
+        </div>
+
+    </div>
+
+         
+        <!-- ----------- -->
+        <!-- Links -->
+        <!-- ----------- -->
+        <div class="single-column">
+        <h3>External Profiles</h3>
+
+        <p style="display: flex; gap: 5px; align-items: center;">
+            <a href="https://arxiv.org/a/oka_t_1.html" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>arXiv
+            </a> |
+        
+            <a href="https://dblp.org/pid/349/0354.html" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>DBLP
+            </a> |
+            <a href="https://scholar.google.com/citations?user=-9b2HAUAAAAJ&hl=en" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>Google Scholar
+            </a> |
+        
+            <a href="https://orcid.org/0000-0002-8868-6136" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>ORCID</a>|
+            <a href="https://www.webofscience.com/wos/author/record/HTR-1004-2023" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>Web of Science
+            </a>
+        </p>
+
+
+        <!-- ----------- -->
+        <!-- Grant -->
+        <!-- ----------- -->
+        <div class="single-column">
+            <h3>Research Grants</h3>
+
+        <div class="publication research-grant">
+            <p><span class="grant-title">Grant-in-Aid for Scientific Research (C) (24K04821)</span>, 2024-2027</p>
+        </div>
+
+        <div class="publication research-grant">
+            <p><span class="grant-title">Grant-in-Aid for Research Activity Start-up (23K18807)</span>, 2023-2024</p>
+        </div>
+    
+        <div class="publication research-grant">
+            <p><span class="grant-title">Australian Research Council (ARC) Discovery Projects</span> (with Pierre Perron and Zhongjun Qu), 2021-2024</p>
+        </div>
+    
+        <div class="publication research-grant">
+            <p><span class="grant-title">Australian Research Council (ARC) Discovery Projects</span> (with Tong Li), 2019-2022</p>
+        </div>
+    
+        <div class="publication research-grant">
+            <p><span class="grant-title">Academic Research Fund (Tier 1), Ministry of Education, Singapore</span>, 2016-2019</p>
+        </div>
+    
+        <div class="publication research-grant">
+            <p><span class="grant-title">Academic Research Fund (Tier 1), Ministry of Education, Singapore</span>, 2013-2016</p>
+        </div>        
+
+    </div>
 </body>
 </html>
