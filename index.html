@@ -101,17 +101,17 @@
             color: #16354a;
             font-weight: normal;
         }       
-/* Square bullet for Working Papers */
-.working-paper::before {
-    content: "■";
-    position: absolute;
-    left: 0;
-    width: 1.5em;
-    text-align: right;
-    color: #16354a;
-    font-size: 0.8em; /* Adjust size if needed */
-    top: 0.1em; /* Adjust vertical alignment */
-}
+        /* Square bullet for Working Papers */
+        .working-paper::before {
+            content: "■";
+            position: absolute;
+            left: 0;
+            width: 1.5em;
+            text-align: right;
+            color: #16354a;
+            font-size: 0.8em; /* Adjust size if needed */
+            top: -0.1em; /* Adjust vertical alignment */
+        }
 
 
 
@@ -162,10 +162,14 @@
             margin-right: 0.01em;
         }
         .publication.research-grant::before {
-            content: "•"; /* Bullet character */
-            font-size: 1.5em; /* Increase bullet size */
-            margin-right: 0.5em; /* Space between bullet and text */
-            line-height: 0.7; /* Match this with the paragraph line-height */
+            content: "■";
+            position: absolute;
+            left: 0;
+            width: 1.5em;
+            text-align: right;
+            color: #16354a;
+            font-size: 0.8em; /* Adjust size if needed */
+            top: -0.1em; /* Adjust vertical alignment */
         }
         .publication.research-grant p {
             line-height: 1.0; /* Adjust this value to control the space between lines */
@@ -664,7 +668,34 @@
 
     </div>
 
-         
+    <!-- ----------- -->
+    <!-- Software -->
+    <!-- ----------- -->
+    <div class="single-column">
+        <h3>Statistical Software</h3>
+
+            <div class="publication research-grant">
+                <p><span class="article-title"> quantilogram: Cross-Quantilogram</span>
+                    <a href="https://CRAN.R-project.org/package=quantilogram" class="paper-link" target="_blank" rel="noopener noreferrer">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>CRAN</a> 
+                </p>
+            </div>
+                   
+    
+            <div class="publication research-grant">
+                <p><span class="article-title"> QR.break: Structural Breaks in Quantile Regression</span>
+                    <a href="https://CRAN.R-project.org/package=QR.break" class="paper-link" target="_blank" rel="noopener noreferrer">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>CRAN</a> 
+                </p>
+            </div> 
+    
+
         <!-- ----------- -->
         <!-- Links -->
         <!-- ----------- -->
