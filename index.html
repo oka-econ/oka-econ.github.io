@@ -25,7 +25,8 @@
             padding: 20px;
             font-size: 16px;
         }
-        h1, h2, h3, h4, h5, h6, .affiliation-heading, .education-heading, .field-heading .academic-positions{
+        h1, h2, h3, h4, h5, h6, .affiliation-heading, .education-heading, 
+        .field-heading .academic-positions{
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
             line-height: 1.1; /* Reduced line height */
@@ -199,7 +200,7 @@
 }
 
 .field-heading {
-    margin-top: 20px; /* Added to create space above Research Field */
+    margin-top: 0px; /* Added to create space above Research Field */
 }
 .field-list {
     display: grid;
@@ -290,7 +291,16 @@
                 <li>Keio University</li>
                 <li>Mita 2-15-45, Minato</li>
                 <li>Tokyo, Japan, 108-0073</li>
-                <li>Email: tatsushi.oka <code>at</code> keio <code>dot</code> jp</li>
+                <li><p>
+                    <a style="display: inline-flex; align-items: center; text-decoration: none; color: inherit;">
+                      <!-- Email SVG Icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="M22 7l-10 7L2 7" />
+                      </svg>
+                      tatsushi.oka <code>at</code> keio <code>dot</code> jp</li>
+                    </a>
+                </p></li>
             </ul>
             <h3 class="field-heading">Research Field</h3>
             <ul class="field-list">
@@ -674,27 +684,38 @@
     <div class="single-column">
         <h3>Statistical Software</h3>
 
-            <div class="publication research-grant">
-                <p><span class="article-title"> quantilogram: Cross-Quantilogram</span>
-                    <a href="https://CRAN.R-project.org/package=quantilogram" class="paper-link" target="_blank" rel="noopener noreferrer">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                        </svg>CRAN</a> 
-                </p>
-            </div>
-                   
-    
-            <div class="publication research-grant">
-                <p><span class="article-title"> QR.break: Structural Breaks in Quantile Regression</span>
-                    <a href="https://CRAN.R-project.org/package=QR.break" class="paper-link" target="_blank" rel="noopener noreferrer">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                        </svg>CRAN</a> 
-                </p>
-            </div> 
-    
+
+        <div class="publication research-grant">
+            <p>
+            <!-- Package name with badge style -->
+            <span class="article-title">
+                <span style="background-color: #4b8cca; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; margin-right: 4px;">
+                    quantilogram</span>
+                Cross-Quantilogram
+                <a href="https://CRAN.R-project.org/package=quantilogram" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>CRAN</a> 
+            </span>
+            </p>
+        </div>
+
+        <div class="publication research-grant">
+            <p>
+            <!-- Package name with badge style -->
+            <span class="article-title">
+                <span style="background-color: #4b8cca; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; margin-right: 4px;">
+                    QR.break</span>
+                Structural Breaks in Quantile Regression
+                <a href="https://CRAN.R-project.org/package=QR.break" class="paper-link" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>CRAN</a> 
+            </span>
+            </p>
+        </div>
 
         <!-- ----------- -->
         <!-- Links -->
