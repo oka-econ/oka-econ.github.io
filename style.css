@@ -1,0 +1,237 @@
+/* style css file */
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400; 
+    line-height: 1.5;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6, .affiliation-heading, .education-heading, 
+.field-heading .academic-positions{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: 1.1; /* Reduced line height */
+    margin-top: 0.5em; /* Adjust top margin */
+    margin-bottom: 0.2em; /* Adjust bottom margin */
+}
+h1 {
+    color: #072442;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.1;
+}
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    align-items: flex-start;
+}
+.left-column {
+    width: 35%; /* Adjusted from calc(50% - 10px) */
+}
+.right-column {
+   width: 60%; /* Adjusted from calc(50% - 10px) */
+}
+h2 {
+    color: #2c3e50;
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+    font-size: 1.2em;
+    line-height: 1.1;
+}
+.single-column h2 {
+   margin-top: 1.5em; 
+}
+h2 .affiliation-heading, .education-heading, .field-heading .academic-positions{
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+ul, p {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+}
+ul li, p {
+    font-size: 1em;
+    line-height: 1.2; /* Added to reduce gap between lines in lists */
+}
+.single-column {
+    margin-top: 1em;
+}
+.publication, .conference-proceeding, .working-paper, .Links, .research-grant {
+    margin-top: 0.5em; 
+    margin-bottom: 0.5em;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.publication-list {
+    counter-reset: publication-counter;
+    margin-top: 0.5em; 
+    padding-left: 0.5em;
+    position: relative;
+}
+.publication::before {
+    counter-increment: publication-counter;
+    content: counter(publication-counter) ".";
+    position: absolute;
+    left: -0.8em;
+    width: 1.8em;
+    text-align: right;
+    color: #16354a;
+    font-weight: normal;
+}       
+/* Square bullet for Working Papers */
+.working-paper::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    width: 1.5em;
+    text-align: right;
+    color: #16354a;
+    font-size: 0.8em; /* Adjust size if needed */
+    top: -0.1em; /* Adjust vertical alignment */
+}
+
+
+
+.publication p, .working-paper p, .research-grant p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+.article-title {
+    font-weight: bold;
+}
+.journal {
+    font-style: italic;
+}    
+.paper-link {
+    font-weight: 550; /* Slightly bold */
+    color: #17528d; /* Dark blue color, you can change this */
+    text-decoration: none; /* Removes underline from links */
+}
+.paper-link:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+.separator {
+    font-weight: normal; /* Normal weight for the separator */
+    margin: 0 0.1em; /* Add some space around the separator */
+}
+@media (max-width: 708px) {
+    .info-container {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        width: 100%;
+    }
+}
+.academic-positions {
+    padding-left: 0;
+    list-style-type: none;
+}
+.academic-positions li {
+    margin-bottom: 0.2em;
+    display: flex;
+    align-items: flex-start;
+}
+.academic-positions .year {
+    min-width: 6.5em;
+    display: inline-block;
+    text-align: left;
+    margin-right: 0.01em;
+}
+.publication.research-grant::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    width: 1.5em;
+    text-align: right;
+    color: #16354a;
+    font-size: 0.8em; /* Adjust size if needed */
+    top: -0.1em; /* Adjust vertical alignment */
+}
+.publication.research-grant p {
+    line-height: 1.0; /* Adjust this value to control the space between lines */
+    margin-bottom: 0.5em; /* Keeps some space between different grants */
+}        
+
+<!-- Image-Related -->
+.header-image {
+    width: 100%;
+    max-width: 700px; /* matches your content max-width */
+    margin: 0 auto 20px; /* centers the image and adds space below */
+    overflow: hidden; /* ensures the image doesn't overflow */
+}
+.header-image img {
+    width: 85%;
+    height: auto;
+    max-height: 260px;
+    object-fit: cover;
+    display: block;
+}        
+.header-image + * {
+   margin-top: 20px;
+}
+
+h1 {
+margin-top: 10px; /* Reduced from whatever it was before */
+}
+
+.field-heading {
+margin-top: 0px; /* Added to create space above Research Field */
+}
+.field-list {
+display: grid;
+grid-template-columns: auto 1fr;
+gap: 0.2em 0.5em;
+line-height: 1.1; /* Added to match other sections */
+}
+.field-item {
+display: contents;
+}
+
+.education-heading {
+margin-top: 20px; /* Added to create space above Education */
+}
+.education-list {
+display: grid;
+grid-template-columns: auto 1fr;
+gap: 0.2em 0.5em;
+line-height: 1.1; /* Added to match other sections */
+}
+.education-item {
+display: contents;
+}  
+.degree, .university {
+margin: 0; /* Remove any default margins */
+padding: 0; /* Remove any default padding */
+}
+.degree {
+font-weight: normal;
+}
+.university {
+text-align: left;
+}
+
+
+
+code {
+    font-family: monospace;
+    background-color: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    display: inline-block;  /* Needed for shadow to show properly */
+}
+
+
+
+
+
+
