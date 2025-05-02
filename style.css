@@ -42,6 +42,12 @@ h2 {
     font-size: 1.2em;
     line-height: 1.1;
 }
+h3 {
+    color: #2c3e50;
+}
+h4 {
+    color: #2c3e50;
+}
 .single-column h2 {
    margin-top: 1.5em; 
 }
@@ -230,8 +236,72 @@ code {
     display: inline-block;  /* Needed for shadow to show properly */
 }
 
+.with-square-mark::before {
+    content: "■";  /* Square character */
+    display: inline-block;
+    margin-right: 0; /* Remove right margin to eliminate space */
+    color:  #17528d; /* Dark blue color, you can change this */
+    position: relative;
+    top: -0.15em; /* Move it up */
+    vertical-align: baseline; /* Ensure proper alignment */
+}
 
 
 
 
+/***** ABSTRACT *******/ 
+/* Style for the abstract content */
+.abstract-toggle {
+    display: none; /* Hide the checkbox */
+  }
+  
+  .abstract-content {
+    background-color: #f9f9f9;
+    border: 1px solid #e8e8e8;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 800px; /* Controls the maximum width of the text */
+    text-align: justify; /* Creates even text edges on both sides */
+    hyphens: auto; /* Enables hyphenation for better text flow */
+    line-height: 1.5; /* Improves readability with consistent line spacing */
+  }
+  
+  /* Show content when checkbox is checked */
+  .abstract-toggle:checked ~ .abstract-content {
+    display: block;
+  }
 
+/* SVGs */
+.icon {
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: middle;
+    fill: none; 
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.link-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.file-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.abstract-toggle {
+    display: inline;
+    cursor: pointer;
+}
+
+.abstract-content {
+    display: none;
+    background-color: #f9f9f9;
+    border: 1px solid #e8e8e8;
+    padding: 10px;
+    margin-top: 5px;
+}
