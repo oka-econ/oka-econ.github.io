@@ -103,6 +103,18 @@ ul li, p {
     font-size: 0.8em; /* Adjust size if needed */
     top: -0.1em; /* Adjust vertical alignment */
 }
+/* Square bullet for publication */
+.with-square-mark::before {
+    content: "■";  /* Square character */
+    display: inline-block;
+    margin-right: 0; /* Remove right margin to eliminate space */
+    color:  #16354a; /* Dark blue color, you can change this */
+    position: relative;
+    top: -0.1em; /* Move it up */
+    font-size: 0.9em; /* Adjust size if needed */
+    vertical-align: baseline; /* Ensure proper alignment */
+    width: 1.5em;
+}
 
 
 
@@ -234,16 +246,6 @@ code {
     border-radius: 3px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     display: inline-block;  /* Needed for shadow to show properly */
-}
-
-.with-square-mark::before {
-    content: "■";  /* Square character */
-    display: inline-block;
-    margin-right: 0; /* Remove right margin to eliminate space */
-    color:  #17528d; /* Dark blue color, you can change this */
-    position: relative;
-    top: -0.15em; /* Move it up */
-    vertical-align: baseline; /* Ensure proper alignment */
 }
 
 
