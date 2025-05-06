@@ -130,9 +130,11 @@ ul li, p {
     font-style: italic;
 }    
 .paper-link {
-    font-weight: 550; /* Slightly bold */
-    color: #17528d; /* Dark blue color, you can change this */
+    font-family: 'Roboto'; 
+    font-weight: 700; /* Slightly bold */
+    color: hsl(209, 25%, 24%);; /* Dark blue color, you can change this */
     text-decoration: none; /* Removes underline from links */
+    text-shadow: 0.2px 0 0 currentColor; /* Creates the subtle bold effect */
 }
 .paper-link:hover {
     text-decoration: underline; /* Adds underline on hover */
