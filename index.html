@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +74,14 @@
 </svg>
 
 
-
+    <script>
+    // Small script to toggle abstracts - no need for IDs
+    function toggleAbstract(element) {
+        const abstractContent = element.parentElement.nextElementSibling;
+        abstractContent.style.display = abstractContent.style.display === 'block' ? 'none' : 'block';
+        return false;
+    }
+    </script>
 
 </head>
 
@@ -779,12 +788,62 @@
             </p>
         </div>
 
-
-
-
     </div> <!--- List --->  
 
-
+    <!-- Use Jekyll to loop through your publication -->
+    {% for pub in site.data.publication %}
+       <!-- publication item -->
+        <div class="publication">
+            <p><span class="article-title">{{ pub.title }}</span></p>
+            <p>{{ pub.authors }}</p>
+            <p><span class="journal">{{ pub.journal }}</span>, {{ pub.year }}</p>
+            <p>
+                {% if pub.paperLink %}
+                <a href="{{ pub.paperLink }}" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                </svg>Working Paper</a> &hairsp;
+                {% endif %}
+                
+                {% if pub.codeLink %}
+                <a href="{{ pub.codeLink }}" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <use href="#code-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                </svg>Code</a> &hairsp;
+                {% endif %}
+                
+                {% if pub.dataLink %}
+                <a href="{{ pub.dataLink }}" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <use href="#data-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                </svg>Data</a> &hairsp;
+                {% endif %}
+                
+                {% if pub.slides %}
+                <a href="{{ pub.slides }}" class="paper-link" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
+                    <use href="#slides-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
+                </svg>Slides</a> &hairsp;
+                {% endif %}
+                
+                {% if pub.abstract %}
+                <!-- ABSTRACT -->
+                <a href="#" class="paper-link" onclick="document.getElementById('abstract-{{ pub.id }}').style.display = document.getElementById('abstract-{{ pub.id }}').style.display === 'block' ? 'none' : 'block'; return false;">
+                <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
+                    <use href="#triangle-down-icon"></use>
+                </svg>Abstract
+                </a>
+                {% endif %}
+                </p>
+                
+                {% if pub.abstract %}
+                <div id="abstract-{{ pub.id }}" class="abstract-content">
+                    {{ pub.abstract }}
+                </div>
+                {% endif %}
+            </p>
+        </div>
+    {% endfor %}
 
 
     <!-- ----------- -->
@@ -917,6 +976,20 @@
     </div>
 </header>
 
+<footer>
+    <br>
+    <p>© <span id="currentYear"></span> - Tatsushi Oka</p>
+</footer>
 
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+
+<style>
+    footer {
+        text-align: center;
+    }
+</style>
 
 </html>

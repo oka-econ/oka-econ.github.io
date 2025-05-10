@@ -1,0 +1,19 @@
+# Publications Data File
+# Each publication is separated by a dash (-)
+
+- title: "Regression Adjustment"
+  authors: "with BBB"
+  journal: "Econometric Reviews"
+  year: "forthcoming"
+  paperLink: "https://dx.doi.org/10.2139/"
+  abstract: "ABSTRACT contents"
+
+- title: "AAA Regression Adjustment"
+  authors: "with BBB"
+  journal: "B Reviews"
+  year: "2023"
+  paperLink: "https://dx.doi.org/10.2139/"
+  abstract: "ABSTRACT contents"
+
+# Add more publications by copying the format above
+# The first publication in this file will appear first on the page
