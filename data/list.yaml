@@ -1,0 +1,9 @@
+publications:
+  - title: "Paper Title"
+    author: "John Doe"
+    year: 2023
+    link: "http://example.com"
+  - title: "Another Paper"
+    author: "Jane Smith"
+    year: 2024
+    link: "http://example.com/another"
