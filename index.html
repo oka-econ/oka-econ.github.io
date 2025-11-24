@@ -1,5 +1,3 @@
----
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,64 +22,7 @@
 
 
 
-<!-- SVG --> 
-<svg style="display: none;">
 
-    <symbol id="file-icon" viewBox="0 0 24 24">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-        <polyline points="14 2 14 8 20 8"></polyline>
-        <line x1="16" y1="13" x2="8" y2="13"></line>
-        <line x1="16" y1="17" x2="8" y2="17"></line>
-        <polyline points="10 9 9 9 8 9"></polyline>
-      </symbol>
-
-      <!-- File icon -->
-    <symbol id="file-icon" viewBox="0 0 24 24">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-        <polyline points="14 2 14 8 20 8"></polyline>
-        <line x1="16" y1="13" x2="8" y2="13"></line>
-        <line x1="16" y1="17" x2="8" y2="17"></line>
-        <polyline points="10 9 9 9 8 9"></polyline>
-      </symbol>
-
-      <symbol id="link-icon" viewBox="0 0 24 24">
-        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-    </symbol>
-
-    <symbol id="file-icon" viewBox="0 0 24 24">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-        <polyline points="14 2 14 8 20 8"></polyline>
-        <line x1="16" y1="13" x2="8" y2="13"></line>
-        <line x1="16" y1="17" x2="8" y2="17"></line>
-        <polyline points="10 9 9 9 8 9"></polyline>
-    </symbol>
-
-    <!-- Abstract: Triangle Down -->
-    <symbol id="triangle-down-icon" viewBox="0 0 24 24">
-        <polygon points="4,4 20,4 12,18" />
-    </symbol>
-
-    <!-- package -->
-    <symbol id="icon-package" viewBox="0 0 24 24">
-    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-    <line x1="2" y1="8" x2="22" y2="8"></line>
-    <line x1="6" y1="12" x2="10" y2="12"></line>
-    <line x1="6" y1="16" x2="14" y2="16"></line>
-   </symbol>
-
-
-</svg>
-
-
-    <script>
-    // Small script to toggle abstracts - no need for IDs
-    function toggleAbstract(element) {
-        const abstractContent = element.parentElement.nextElementSibling;
-        abstractContent.style.display = abstractContent.style.display === 'block' ? 'none' : 'block';
-        return false;
-    }
-    </script>
 
 </head>
 
@@ -155,864 +96,442 @@
     <!-- ------------- -->
     <!-- Working Paper -->
     <!-- ------------- -->
-    <h2>Working Papers</h2>
-
-    <div class="publication working-paper">
-        <p><span class="article-title">Efficient and Scalable Estimation of Distributional Treatment Effects with Multi-Task Neural Networks</span></p>
-        <p>with Tomu Hirata, Undral Byambadalai, Shota Yasui, and Shingo Uto, March 2025</p>
-        <p>
-            <a href="http://dx.doi.org/10.2139/ssrn.5347645" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                </svg>Working Paper</a> &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-HBOYU2025WP').style.display 
-                = document.getElementById('abstract-HBOYU2025WP').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-HBOYU2025WP" class="abstract-content">
-                        We propose a novel multi-task neural network approach for estimating distributional treatment effects (DTE) in randomized experiments. While DTE provides more granular insights into the experiment outcomes over conventional methods focusing on the Average Treatment Effect (ATE), estimating it with regression adjustment methods presents significant challenges. Specifically, precision in the distribution tails suffers due to data imbalance, and computational inefficiencies arise from the need to solve numerous regression problems, particularly in large-scale datasets commonly encountered in industry. To address these limitations, our method leverages multi-task neural networks to estimate conditional outcome distributions while incorporating monotonic shape constraints and multi-threshold label learning to enhance accuracy. To demonstrate the practical effectiveness of our proposed method, we apply our method to both simulated and real-world datasets, including a randomized field experiment aimed at reducing water consumption in the US and a large-scale A/B test from a leading streaming platform in Japan. The experimental results consistently demonstrate superior performance across various datasets, establishing our method as a robust and practical solution for modern causal inference applications requiring a detailed understanding of treatment effect heterogeneity.
-
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Randomized Experiment, Distributional Treatment Effect, Multi-Task Learning, Neural Network, Shape Constraints
-                        </p> 
-                    </div>        
-        </p>
-    </div>
-
-    <div class="publication working-paper">
-        <p><span class="article-title">Inflation Target at Risk: A Time-Varying Parameter Distributional Regression</span></p>
-        <p>with Yunyun Wang and Dan Zhu, Mar 2024</p>
-        <p>
-            <a href="https://dx.doi.org/10.2139/ssrn.4764340" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                </svg>Working Paper</a> &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-WOZ2024WP').style.display 
-                = document.getElementById('abstract-WOZ2024WP').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-WOZ2024WP" class="abstract-content">
-                        Macro variables frequently display time-varying distributions, driven by the dynamic and evolving characteristics of economic, social, and environmental factors that consistently reshape the fundamental patterns and relationships governing these variables. To better understand the distributional dynamics beyond the central tendency, this paper introduces a novel semi-parametric approach for constructing time-varying conditional distributions, relying on the recent advances in distributional regression. We present an efficient precision-based Markov Chain Monte Carlo algorithm that simultaneously estimates all model parameters while explicitly enforcing the monotonicity condition on the conditional distribution function. Our model is applied to construct the forecasting distribution of inflation for the U.S., conditional on a set of macroeconomic and financial indicators. The risks of future inflation deviating excessively high or low from the desired range are carefully evaluated. Moreover, we provide a thorough discussion about the interplay between inflation and unemployment rates during the Global Financial Crisis, COVID, and the third quarter of 2023.
-
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Time-varying parameter model, Distributional regression, Bayesian analysis, Inflation risks
-                        </p> 
-                    </div>        
-        </p>
-    </div>
-
-    <div class="publication working-paper">
-        <p><span class="article-title">Distributional Vector Autoregression: Eliciting Macro and Financial Dependence</span></p>
-        <p>with Yunyun Wang and Dan Zhu, Feb 2023</p>
-        <p>
-            <a href="https://dx.doi.org/10.2139/ssrn.4382497" class="paper-link" target="_blank" rel="noopener noreferrer">
-            <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-            </svg>Working Paper</a> &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-WOZ2023WP').style.display 
-                = document.getElementById('abstract-WOZ2023WP').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-WOZ2023WP" class="abstract-content">
-                        Vector autoregression is an essential tool in empirical macroeconomics and finance for understanding the dynamic interdependencies among multivariate time series. In this study, we expand the scope of vector autoregression by incorporating a multivariate distributional regression framework and introducing a distributional impulse response function, providing a comprehensive view of dynamic heterogeneity. We propose a straightforward yet flexible estimation method and establish its asymptotic properties under weak dependence assumptions. Our empirical analysis examines the conditional joint distribution of GDP growth and financial conditions in the United States, with a focus on the global financial crisis. Our results show that tight financial conditions lead to a multimodal conditional joint distribution of GDP growth and financial conditions, and easing financial conditions significantly impacts long-term GDP growth, while improving the GDP growth during the global financial crisis has limited effects on financial conditions. 
-
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Vector autoregression, Impulse response function, Multivariate time series, Distributional regression
-                        </p> 
-                    </div>
-        </p>
-    </div>
 
 
 
+    <!-------------------------->
+    <!-- Publications List    -->
+    <!-------------------------->
+    <div> 
+    <script>
 
-    <!-- ----------- -->
-    <!-- Publication -->
-    <!-- ----------- -->
-    <h2>Peer-Reviewed Articles</h2>
+        // Working Papers Data
+        const workingPapers = {
+            papers: [
+                {
+                    title: "Efficient and Scalable Estimation of Distributional Treatment Effects with Multi-Task Neural Networks",
+                    author: "Tomu Hirata, Undral Byambadalai, Shota Yasui, Shingo Uto",
+                    year: "2025",
+                    month: "March",
+                    working_paper: "http://dx.doi.org/10.2139/ssrn.5347645",
+                    abstract: "We propose a novel multi-task neural network approach for estimating distributional treatment effects (DTE) in randomized experiments. While DTE provides more granular insights into the experiment outcomes over conventional methods focusing on the Average Treatment Effect (ATE), estimating it with regression adjustment methods presents significant challenges. Specifically, precision in the distribution tails suffers due to data imbalance, and computational inefficiencies arise from the need to solve numerous regression problems, particularly in large-scale datasets commonly encountered in industry. To address these limitations, our method leverages multi-task neural networks to estimate conditional outcome distributions while incorporating monotonic shape constraints and multi-threshold label learning to enhance accuracy. To demonstrate the practical effectiveness of our proposed method, we apply our method to both simulated and real-world datasets, including a randomized field experiment aimed at reducing water consumption in the US and a large-scale A/B test from a leading streaming platform in Japan. The experimental results consistently demonstrate superior performance across various datasets, establishing our method as a robust and practical solution for modern causal inference applications requiring a detailed understanding of treatment effect heterogeneity.",
+                    keywords: "Randomized Experiment, Distributional Treatment Effect, Multi-Task Learning, Neural Network, Shape Constraints"
+                },
+                {
+                    title: "Inflation Target at Risk: A Time-Varying Parameter Distributional Regression",
+                    author: "Yunyun Wang, Dan Zhu",
+                    year: "2024",
+                    month: "March",
+                    working_paper: "https://dx.doi.org/10.2139/ssrn.4764340",
+                    abstract: "Macro variables frequently display time-varying distributions, driven by the dynamic and evolving characteristics of economic, social, and environmental factors that consistently reshape the fundamental patterns and relationships governing these variables. To better understand the distributional dynamics beyond the central tendency, this paper introduces a novel semi-parametric approach for constructing time-varying conditional distributions, relying on the recent advances in distributional regression. We present an efficient precision-based Markov Chain Monte Carlo algorithm that simultaneously estimates all model parameters while explicitly enforcing the monotonicity condition on the conditional distribution function. Our model is applied to construct the forecasting distribution of inflation for the U.S., conditional on a set of macroeconomic and financial indicators. The risks of future inflation deviating excessively high or low from the desired range are carefully evaluated. Moreover, we provide a thorough discussion about the interplay between inflation and unemployment rates during the Global Financial Crisis, COVID, and the third quarter of 2023.",
+                    keywords: "Time-varying parameter model, Distributional regression, Bayesian analysis, Inflation risks"
+                }
+            ]
+        };
 
-    <div class="publication-list">
-    <h4 class="with-square-mark"> Journal Publications</h4>
-
-
-        <!-- publication item -->
-        <div class="publication">
-            <p><span class="article-title">Regression Adjustment for Estimating Distributional Treatment Effects in Randomized Controlled Trials</span></p>
-            <p> <span class="journal">Econometric Reviews</span>, 2025, with Shota Yasui, Yuta Hayakawa, Undral Byambadalai
-            </p> 
-            <p>
-                <a href="https://doi.org/10.1080/07474938.2025.2538843" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg class="icon link-icon"><use href="#link-icon"></use></svg> 
-                Econometric Reviews
-                </a> &hairsp;
-                <a href="https://dx.doi.org/10.2139/ssrn.4899404" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                </svg>Working Paper</a> &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" onclick="document.getElementById('abstract-OYHB2025ER').style.display = document.getElementById('abstract-OYHB2025ER').style.display === 'block' ? 'none' : 'block'; return false;">
-                <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                    <use href="#triangle-down-icon"></use>
-                </svg>Abstract 
-                </a> 
-                </p>
-                <div id="abstract-OYHB2025ER" class="abstract-content">
-                    In this paper, we address the issue of estimating and inferring distributional treatment effects in randomized experiments. The distributional treatment effect provides a more comprehensive understanding of treatment heterogeneity compared to average treatment effects. We propose a regression adjustment method that utilizes distributional regression and pre-treatment information, establishing theoretical efficiency gains without imposing restrictive distributional assumptions. We develop a practical inferential framework and demonstrate its advantages through extensive simulations. Analyzing water conservation policies, our method reveals that behavioral nudges systematically shift consumption from high to moderate levels. Examining health insurance coverage, we show the treatment reduces the probability of zero doctor visits by 6.6 percentage points while increasing the likelihood of 3-6 visits. In both applications, our regression adjustment method substantially improves precision and identifies treatment effects that were statistically insignificant under conventional approaches. 
-                </div>
-            </p> 
-        </div>
-
-        
-        <!-- publication item: 2 -->
-        <div class="publication">
-        <p><span class="article-title">Semiparametric Single-Index Estimation for Average Treatment Effects</span></p>
-        <p><span class="journal">Econometric Reviews</span>, 2025 44(6), pp. 843-885, with Difang Huang and Jiti Gao</p>
-        <p>
-            <a href="https://doi.org/10.1080/07474938.2025.2457561" class="paper-link" target="_blank" rel="noopener noreferrer">
-            <svg class="icon link-icon"><use href="#link-icon"></use></svg> 
-            Econometric Reviews
-            </a> &hairsp;
-            <a href="https://dx.doi.org/10.2139/ssrn.4134564" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg class="icon file-icon"><use href="#file-icon"></use></svg>Working Paper
-            </a> &hairsp;
-            <a href="#" class="paper-link" 
-            onclick="document.getElementById('abstract-HGO2025').style.display 
-            = document.getElementById('abstract-HGO2025').style.display === 'block' ? 'none' : 'block'; return false;">
-                <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                    <use href="#triangle-down-icon"></use>
-                </svg>Abstract 
-                </a>
-                </p>
-                <div id="abstract-HGO2025" class="abstract-content">
-                    We propose a semiparametric method to estimate the average treatment effect under the assumption of unconfoundedness given observational data. Our estimation method alleviates misspecification issues of the propensity score function by estimating the single-index link function involved through Hermite polynomials. Our approach is computationally tractable and allows for moderately large dimension covariates. We provide the large sample properties of the estimator and show its validity. Also, the average treatment effect estimator achieves the parametric rate and asymptotic normality. Our extensive Monte Carlo study shows that the proposed estimator is valid in finite samples. Applying our method to maternal smoking and infant health, we find that conventional estimates of smoking's impact on birth weight may be biased due to propensity score misspecification, and our analysis of job training programs reveals earnings effects that are more precisely estimated than in prior work. These applications demonstrate how addressing model misspecification can substantively affect our understanding of key policy-relevant treatment effects.
-
-                    <p style="margin-top: 12px;"><i>Keywords</i>: Average treatment effects, Causal inference, Hermite series expansion, Propensity score</p>
-
-                </div>
-        </p> 
-        </div>
-        
-      <!-- publication item -->
-        <div class="publication">
-            <p><span class="article-title">Quantile Random-Coefficient Regression with Interactive Fixed Effects: Heterogeneous Group-level Policy Evaluation</span></p>
-            <p> <span class="journal">Econometric Reviews</span>, 2025, 44(5), pp. 630-648,  with Ruofan Xu, Jiti Gao and Yoon-Jae Whang </p>
-            <p>
-                <a href="https://doi.org/10.1080/07474938.2024.2433688" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>Econometric Reviews</a> &hairsp;
-                <a href="https://ssrn.com/abstract=4182257" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="15" height="15" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a> &hairsp;
-            <!-- ABSTRACT: Change ID-->
-            <a href="#" class="paper-link" 
-            onclick="document.getElementById('abstract-XGOW2025').style.display 
-            = document.getElementById('abstract-XGOW2025').style.display === 'block' ? 'none' : 'block'; return false;">
-                <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                    <use href="#triangle-down-icon"></use>
-                </svg>Abstract 
-                </a> 
-                </p>
-                <div id="abstract-XGOW2025" class="abstract-content">
-                    We propose a quantile random-coefficient regression with interactive fixed effects to study the effects of group-level policies that are heterogeneous across individuals. Our approach is the first to use a latent factor structure to handle the unobservable heterogeneities in the random coefficient. The asymptotic properties and an inferential method for the policy estimators are established. The model is applied to evaluate the effect of the minimum wage policy on earnings between 1967 and 1980 in the United States. Our results suggest that the minimum wage policy has significant and persistent positive effects on black workers and female workers up to the median. Our results also indicate that the policy helps reduce income disparity up to the median between two groups: black, female workers versus white, male workers. However, the policy is shown to have little effect on narrowing the income gap between low- and high-income workers within the subpopulations.
-
-                    <p style="margin-top: 12px;"><i>Keywords</i>: Heterogenous policy effects, Hierarchical regression, Random coefficient model</p>
-                </div>
-            </p>
-        </div>
-
-
-        <div class="publication">
-            <p><span class="article-title">Not Eliminate but Aggregate: Post-Hoc Control over Mixture-of-Experts to Address Shortcut Shifts in Natural Language Understanding</span></p>
-            <p><span class="journal">Transactions of the Association for Computational Linguistics</span>, 2024, 12, pp. 1268-1289, with Ukyo Honda, Peinan Zhang, Masato Mita</p>
-            <p>
-                <a href="https://doi.org/10.1162/tacl_a_00701" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>TACL </a>  &hairsp;
-                <a href="http://dx.doi.org/10.2139/ssrn.4867631" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a> &hairsp;
-            <!-- ABSTRACT: Change ID-->
-            <a href="#" class="paper-link" 
-            onclick="document.getElementById('abstract-HOZM2024TACL').style.display 
-            = document.getElementById('abstract-HOZM2024TACL').style.display === 'block' ? 'none' : 'block'; return false;">
-                <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                    <use href="#triangle-down-icon"></use>
-                </svg>Abstract 
-                </a> 
-                <div id="abstract-HOZM2024TACL" class="abstract-content">
-                    Recent models for natural language understanding are inclined to exploit simple patterns in datasets, commonly known as shortcuts. These shortcuts hinge on spurious correlations between labels and latent features existing in the training data. At inference time, shortcut-dependent models are likely to generate erroneous predictions under distribution shifts, particularly when some latent features are no longer correlated with the labels. To avoid this, previous studies have trained models to eliminate the reliance on shortcuts. In this study, we explore a different direction: pessimistically aggregating the predictions of a mixture-of-experts, assuming each expert captures relatively different latent features. The experimental results demonstrate that our post-hoc control over the experts significantly enhances the model's robustness to the distribution shift in shortcuts. Additionally, we show that our approach has some practical advantages. We also analyze our model and provide results to support the assumption.
-
-                    <p style="margin-top: 12px;"><i>Keywords</i>: Natural language understanding, Mixture ofExperts, Shortcuts, Spurious correlations</p>
-                </div>
-            </p>
-        </div>
-
-        
-
-
-
-        <div class="publication">
-            <p><span class="article-title">Bivariate Distribution Regression with Application to Insurance Data</span></p>  
-            <p><span class="journal">Insurance: Mathematics and Economics</span>, 2023, 113, pp. 215-232. with Yunyun Wang and Dan Zhu, </p>
-            <p>
-                <a href="https://doi.org/10.1016/j.insmatheco.2023.08.005"    class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>IME</a> &hairsp;
-                <a href="https://dx.doi.org/10.2139/ssrn.4065771" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a> &hairsp;
-                        <!-- ABSTRACT: Change ID-->
-                        <a href="#" class="paper-link" 
-                        onclick="document.getElementById('abstract-WOZ2023IME').style.display 
-                        = document.getElementById('abstract-WOZ2023IME').style.display === 'block' ? 'none' : 'block'; return false;">
-                            <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                                <use href="#triangle-down-icon"></use>
-                            </svg>Abstract 
-                            </a> 
-                            </p>
-                            <div id="abstract-WOZ2023IME" class="abstract-content">
-                                Understanding variable dependence, particularly eliciting their statistical properties given a set of covariates, provides the mathematical foundation in practical operations management such as risk analysis and decision-making given observed circumstances. This article presents an estimation method for modeling the conditional joint distribution of bivariate outcomes based on the distribution regression and factorization methods. This method is considered semiparametric in that it allows for flexible modeling of both the marginal and joint distributions conditional on covariates without imposing global parametric assumptions across the entire distribution. In contrast to existing parametric approaches, our method can accommodate discrete, continuous, or mixed variables, and provides a simple yet effective way to capture distributional dependence structures between bivariate outcomes and covariates. Various simulation results confirm that our method can perform similarly or better in finite samples compared to the alternative methods. In an application to the study of a motor third-party liability insurance portfolio, the proposed method effectively estimates risk measures such as the conditional Value-at-Risk and Expected Shortfall. This result suggests that this semiparametric approach can serve as an alternative in insurance risk management.
+        // Function to render working papers
+        function renderWorkingPapers() {
+            const container = document.getElementById('working-papers-list');
+            let html = '';
             
-                                <p style="margin-top: 12px;"><i>Keywords</i>: Finance, Multivariate statistics, Risk management, Distribution Regression</p>
-                            </div>
-            </p>
-        </div>
-
-        <div class="publication">
-            <p><span class="article-title">Heterogeneous Impact of the Minimum Wage: Implications for Changes in Between- and Within-Group Inequality</span></p>
-            <p><span class="journal">Journal of Human Resources</span>, 2023, 58(1), pp. 335-362, with Ken Yamada</p>
-            <p>
-                <a href="http://jhr.uwpress.org/content/58/1/335.abstract" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>Journal of Human Resources</a> &hairsp;
-                <a href="http://dx.doi.org/10.2139/ssrn.3350843" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a> 
-                    &hairsp;
-            <!-- ABSTRACT: Change ID-->
-            <a href="#" class="paper-link" 
-            onclick="document.getElementById('abstract-OY2023JHR').style.display 
-            = document.getElementById('abstract-OY2023JHR').style.display === 'block' ? 'none' : 'block'; return false;">
-                <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                    <use href="#triangle-down-icon"></use>
-                </svg>Abstract 
-                </a> 
-                </p>
-                <div id="abstract-OY2023JHR" class="abstract-content">
-                    Most of the workers who earn at or below the minimum wage are either less educated, young, or female in the United States. We examine the extent to which the minimum wage influences the wage differential among workers with different observed characteristics and the wage differential among workers with the same observed characteristics. Our results suggest that changes in the real value of the minimum wage account in part for the patterns of changes in education, experience, and gender wage differentials and for most of the changes in within-group wage differentials for workers with lower levels of experience.
-
-                    <p style="margin-top: 12px;"><i>Keywords</i>: Minimum wage, wage inequality, censoring, quantile regression</p>
-                </div>
-            </p>
-        </div>
-    
-        <div class="publication">
-            <p><span class="article-title">The Effect of Human Mobility Restrictions on the COVID-19 Transmission Network in China</span></p>
-            <p><span class="journal">PLoS One</span>, July 2021, with Wei Wei and Dan Zhu</p>
-            <a href="https://doi.org/10.1371/journal.pone.0254403" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                </svg>PLoS One</a> &hairsp;
-                <a href="https://dx.doi.org/10.2139/ssrn.3675213" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a> 
-                    &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-OWZ2021POLS').style.display 
-                = document.getElementById('abstract-OWZ2021POLS').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-OWZ2021POLS" class="abstract-content">
-                         
-                        COVID-19 poses a severe threat worldwide. This study analyzes its propagation and evaluates statistically the effect of mobility restriction policies on the spread of the disease.
-                        We apply a variation of the stochastic Susceptible-Infectious-Recovered model to describe the temporal-spatial evolution of the disease across 33 provincial regions in China, where the disease was first identified. We employ Bayesian Markov Chain Monte-Carlo methods to estimate the model and to characterize a dynamic transmission network, which enables us to evaluate the effectiveness of various local and national policies. The spread of the disease in China was predominantly driven by community transmission within regions, which dropped substantially after local governments imposed various lockdown policies. Further, Hubei was only the epicenter of the early epidemic stage. Secondary epicenters, such as Beijing and Guangdong, had already become established by late January 2020. The transmission from these epicenters substantially declined following the introduction of mobility restrictions across regions. Conclusions: The spatial transmission network is able to differentiate the effect of the local lockdown policies and the cross-region mobility restrictions. We conclude that both are important policy tools for curbing the disease transmission. The coordination between central and local governments is important in suppressing the spread of infectious diseases.
-
-                        <p style="margin-top: 12px;"><i>Keywords</i>: COVID-19, Infection, Heterogeneity, Spatial Model, Bayesian Analysis</p>
-                    </div>
-        </div>
-    
-        <div class="publication">
-            <p><span class="article-title">Inference Related to Common Breaks in a Multivariate System with Joined Segmented Trends with Applications to Global and Hemispheric Temperatures</span></p>
-            <p><span class="journal">Journal of Econometrics</span>, January 2020, 214(1), pp. 130-152, with Francisco Estrada, Dukpa Kim, Pierre Perron</p>
-            <p>
-                <a href="https://doi.org/10.1016/j.jeconom.2019.05.008" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>Journal of Econometrics</a> 
-                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3184646" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a>
-            </p>
-        </div>
-    
-        <div class="publication">
-            <p><span class="article-title">Indirect Inference with a Non-Smooth Criterion Function</span></p>
-            <p><span class="journal">Journal of Econometrics</span>, October 2019, 212(2), pp. 623-645, with David Frazier and Dan Zhu</p>
-            <p>
-                <a href="https://doi.org/10.1016/j.jeconom.2019.06.003" class="paper-link">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>Journal of Econometrics</a> &hairsp;
-                <a href="https://ssrn.com/abstract=3226391" class="paper-link">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a> &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-FOZ2019JoE').style.display 
-                = document.getElementById('abstract-FOZ2019JoE').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-FOZ2019JoE" class="abstract-content">
-                        Indirect inference requires simulating realizations of endogenous variables from the model under study. When the endogenous variables are discontinuous functions of the model parameters, the resulting indirect inference criterion function is discontinuous and does not permit the use of derivative-based optimization routines. Using a change of variables technique, we propose a novel simulation algorithm that alleviates the discontinuities inherent in such indirect inference criterion functions, and permits the application of derivative-based optimization routines to estimate the unknown model parameters. Unlike competing approaches, this approach does not rely on kernel smoothing or bandwidth parameters. Several Monte Carlo examples that have featured in the literature on indirect inference with discontinuous outcomes illustrate the approach, and demonstrate the superior performance of this approach over existing alternatives.
-
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Simulation estimators, Indirect inference, Discontinuous objective functions, Dynamic discrete choice models
-                        </p> 
-                    </div>        
-            </p>
-        </div>
-
-        <div class="publication">
-            <p><span class="article-title">Quantile Treatment Effects in Difference in Differences Models under Dependence Restrictions and with only Two Time Periods</span></p>
-            <p><span class="journal">Journal of Econometrics</span>, October 2018, 206(2), pp. 395-413, with Brantly Callaway and Tong Li</p>
-            <p>
-                <a href="https://doi.org/10.1016/j.jeconom.2018.06.008" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>
-                    Journal of Econometrics
-                </a> &hairsp;
-                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2915947" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>
-                    Working Paper
-                </a> &hairsp;
-                <a href="https://bcallaway11.github.io/code/" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <use href="#icon-package"></use>
-                </svg>
-                R-package
-                </a>
-                &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-CLO2018JoE').style.display 
-                = document.getElementById('abstract-CLO2018JoE').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-CLO2018JoE" class="abstract-content">
-                        This paper shows that the Conditional Quantile Treatment Effect on the Treated is identified under (i) a Conditional Distributional Difference in Differences assumption and (ii) a new assumption that the dependence (the copula) between the change in untreated potential outcomes and the initial level of untreated potential outcomes is the same for the treated group and untreated group. We consider estimation and inference with discrete covariates and propose a uniform inference procedure based on the exchangeable bootstrap. Finally, we estimate the effect of increasing the minimum wage on the distribution of earnings for subgroups defined by race, gender, and education.
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Difference-in-differences, Quantile treatment effects, Copula stability, Causal inference
-                        </p> 
-                    </div>        
+            workingPapers.papers.forEach((paper, index) => {
+                const uniqueId = `wp-${index}`;
                 
-            </p>
-        </div>
+                let links = '';
+                if (paper.abstract) links += `<a href="#" onclick="return toggleAbstract('${uniqueId}')" class="b">Abstract</a>`;
+                if (paper.working_paper) links += `<a href="${paper.working_paper}" class="b">Working Paper</a>`;
+                
+                let dateStr = paper.month ? `${paper.month} ${paper.year}` : paper.year;
+                
+                html += `
+                    <div class="publication">
+                        <div class="pub-title">${paper.title}</div>
+                        <div class="pub-venue">with ${paper.author}, ${dateStr}</div>
+                        <div>${links}</div>
+                        ${paper.abstract ? `
+                            <div id="abstract-${uniqueId}" class="abstract" style="display: none;">
+                                <strong>Abstract:</strong> ${paper.abstract}
+                                ${paper.keywords ? `<div style="margin-top: 8px;"><strong>Keywords:</strong> ${paper.keywords}</div>` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderWorkingPapers();
+            renderPublications();
+        });
+
+        //------------------------------------
+        // Publication ---------------------------
+        //------------------------------------
+        const publications = {
+            //------------------------------------
+            // Journal ---------------------------
+            //------------------------------------
+              journal: [
+                {
+                    title: "Distributional Vector Autoregression: Eliciting Macro and Financial Dependence",
+                    author: "Yunyun Wang, Dan Zhu",
+                    venue:  "Journal of Applied Econometrics",
+                    year: "2025",
+                    volume: "forthcoming", 
+                    working_paper: "https://dx.doi.org/10.2139/ssrn.4382497",
+                    abstract: "Vector autoregression is an essential tool in empirical macroeconomics and finance for understanding the dynamic interdependencies among multivariate time series. In this study, we expand the scope of vector autoregression by incorporating a multivariate distributional regression framework and introducing a distributional impulse response function, providing a comprehensive view of dynamic heterogeneity. We propose a straightforward yet flexible estimation method and establish its asymptotic properties under weak dependence assumptions. Our empirical analysis examines the conditional joint distribution of GDP growth and financial conditions in the United States, with a focus on the global financial crisis. Our results show that tight financial conditions lead to a multimodal conditional joint distribution of GDP growth and financial conditions, and easing financial conditions significantly impacts long-term GDP growth, while improving the GDP growth during the global financial crisis has limited effects on financial conditions.",
+                    keywords: "Vector autoregression, Impulse response function, Multivariate time series, Distributional regression"
+                },
+                {
+                    title:  "Regression Adjustment for Estimating Distributional Treatment Effects in Randomized Controlled Trials",
+                    author: "Shota Yasui, Yuta Hayakawa, Undral Byambadalai",
+                    venue:  "Econometric Reviews", 
+                    year:   "2025", 
+                    abstract: "In this paper, we address the issue of estimating and inferring distributional treatment effects in randomized experiments. The distributional treatment effect provides a more comprehensive understanding of treatment heterogeneity compared to average treatment effects. We propose a regression adjustment method that utilizes distributional regression and pre-treatment information, establishing theoretical efficiency gains without imposing restrictive distributional assumptions. We develop a practical inferential framework and demonstrate its advantages through extensive simulations. Analyzing water conservation policies, our method reveals that behavioral nudges systematically shift consumption from high to moderate levels. Examining health insurance coverage, we show the treatment reduces the probability of zero doctor visits by 6.6 percentage points while increasing the likelihood of 3-6 visits. In both applications, our regression adjustment method substantially improves precision and identifies treatment effects that were statistically insignificant under conventional approaches.",  
+                    keywords: "Regression Adjustment, Distribution Regression, Randomized Controlled Trials, Distributional Treatment Effects", 
+                    working_paper: "https://dx.doi.org/10.2139/ssrn.4899404",
+                    journal_link: "https://doi.org/10.1080/07474938.2025.2538843"  
+                },
+                {
+                    title: "Semiparametric Single-Index Estimation for Average Treatment Effects",
+                    author: "Difang Huang, Jiti Gao",  
+                    venue: "Econometric Reviews",
+                    year: "2025",
+                    volume: "44(6)",
+                    pages: "843-885",
+                    journal_link: "https://doi.org/10.1080/07474938.2025.2457561",
+                    working_paper: "https://dx.doi.org/10.2139/ssrn.4134564",
+                    abstract: "We propose a semiparametric method to estimate the average treatment effect under the assumption of unconfoundedness given observational data. Our estimation method alleviates misspecification issues of the propensity score function by estimating the single-index link function involved through Hermite polynomials. Our approach is computationally tractable and allows for moderately large dimension covariates. We provide the large sample properties of the estimator and show its validity. Also, the average treatment effect estimator achieves the parametric rate and asymptotic normality. Our extensive Monte Carlo study shows that the proposed estimator is valid in finite samples. Applying our method to maternal smoking and infant health, we find that conventional estimates of smoking's impact on birth weight may be biased due to propensity score misspecification, and our analysis of job training programs reveals earnings effects that are more precisely estimated than in prior work. These applications demonstrate how addressing model misspecification can substantively affect our understanding of key policy-relevant treatment effects.",
+                    keywords: "Average treatment effects, Causal inference, Hermite series expansion, Propensity score"
+                },
+                {
+                    title: "Quantile Random-Coefficient Regression with Interactive Fixed Effects: Heterogeneous Group-level Policy Evaluation",
+                    author: "Ruofan Xu, Jiti Gao, Yoon-Jae Whang", 
+                    venue: "Econometric Reviews",
+                    year: "2025",
+                    volume: "44(5)",
+                    pages: "630-648",
+                    journal_link: "https://doi.org/10.1080/07474938.2024.2433688",
+                    working_paper: "https://ssrn.com/abstract=4182257",
+                    abstract: "We propose a quantile random-coefficient regression with interactive fixed effects to study the effects of group-level policies that are heterogeneous across individuals. Our approach is the first to use a latent factor structure to handle the unobservable heterogeneities in the random coefficient. The asymptotic properties and an inferential method for the policy estimators are established. The model is applied to evaluate the effect of the minimum wage policy on earnings between 1967 and 1980 in the United States. Our results suggest that the minimum wage policy has significant and persistent positive effects on black workers and female workers up to the median. Our results also indicate that the policy helps reduce income disparity up to the median between two groups: black, female workers versus white, male workers. However, the policy is shown to have little effect on narrowing the income gap between low- and high-income workers within the subpopulations.",
+                    keywords: "Heterogenous policy effects, Hierarchical regression, Random coefficient model"
+                },
+                {
+                    title: "Not Eliminate but Aggregate: Post-Hoc Control over Mixture-of-Experts to Address Shortcut Shifts in Natural Language Understanding",
+                    author: "Ukyo Honda, Peinan Zhang, Masato Mita",
+                    venue: "Transactions of the Association for Computational Linguistics",
+                    year: "2024",
+                    volume: "12",
+                    pages: "1268-1289",
+                    journal_link: "https://doi.org/10.1162/tacl_a_00701",
+                    working_paper: "http://dx.doi.org/10.2139/ssrn.4867631",
+                    abstract: "Recent models for natural language understanding are inclined to exploit simple patterns in datasets, commonly known as shortcuts. These shortcuts hinge on spurious correlations between labels and latent features existing in the training data. At inference time, shortcut-dependent models are likely to generate erroneous predictions under distribution shifts, particularly when some latent features are no longer correlated with the labels. To avoid this, previous studies have trained models to eliminate the reliance on shortcuts. In this study, we explore a different direction: pessimistically aggregating the predictions of a mixture-of-experts, assuming each expert captures relatively different latent features. The experimental results demonstrate that our post-hoc control over the experts significantly enhances the model's robustness to the distribution shift in shortcuts. Additionally, we show that our approach has some practical advantages. We also analyze our model and provide results to support the assumption.",
+                    keywords: "Natural language understanding, Mixture of Experts, Shortcuts, Spurious correlations"
+                },   
+            {
+                title: "Bivariate Distribution Regression with Application to Insurance Data",
+                author: "Yunyun Wang, Dan Zhu",
+                venue: "Insurance: Mathematics and Economics",
+                year: "2023",
+                volume: "113",
+                pages: "215-232",
+                journal_link: "https://doi.org/10.1016/j.insmatheco.2023.08.005",
+                working_paper: "https://dx.doi.org/10.2139/ssrn.4065771",
+                abstract: "Understanding variable dependence, particularly eliciting their statistical properties given a set of covariates, provides the mathematical foundation in practical operations management such as risk analysis and decision-making given observed circumstances. This article presents an estimation method for modeling the conditional joint distribution of bivariate outcomes based on the distribution regression and factorization methods. This method is considered semiparametric in that it allows for flexible modeling of both the marginal and joint distributions conditional on covariates without imposing global parametric assumptions across the entire distribution. In contrast to existing parametric approaches, our method can accommodate discrete, continuous, or mixed variables, and provides a simple yet effective way to capture distributional dependence structures between bivariate outcomes and covariates. Various simulation results confirm that our method can perform similarly or better in finite samples compared to the alternative methods. In an application to the study of a motor third-party liability insurance portfolio, the proposed method effectively estimates risk measures such as the conditional Value-at-Risk and Expected Shortfall. This result suggests that this semiparametric approach can serve as an alternative in insurance risk management.",
+                keywords: "Finance, Multivariate statistics, Risk management, Distribution Regression"
+            },
+            {
+                title: "Heterogeneous Impact of the Minimum Wage: Implications for Changes in Between- and Within-Group Inequality",
+                author: "Ken Yamada",
+                venue: "Journal of Human Resources",
+                year: "2023",
+                volume: "58(1)",
+                pages: "335-362",
+                journal_link: "http://jhr.uwpress.org/content/58/1/335.abstract",
+                working_paper: "http://dx.doi.org/10.2139/ssrn.3350843",
+                abstract: "Most of the workers who earn at or below the minimum wage are either less educated, young, or female in the United States. We examine the extent to which the minimum wage influences the wage differential among workers with different observed characteristics and the wage differential among workers with the same observed characteristics. Our results suggest that changes in the real value of the minimum wage account in part for the patterns of changes in education, experience, and gender wage differentials and for most of the changes in within-group wage differentials for workers with lower levels of experience.",
+                keywords: "Minimum wage, wage inequality, censoring, quantile regression"
+            },
+            {
+                title: "The Effect of Human Mobility Restrictions on the COVID-19 Transmission Network in China",
+                author: "Wei Wei, Dan Zhu",
+                venue: "PLoS One",
+                year: "2021",
+                journal_link: "https://doi.org/10.1371/journal.pone.0254403",
+                working_paper: "https://dx.doi.org/10.2139/ssrn.3675213",
+                abstract: "COVID-19 poses a severe threat worldwide. This study analyzes its propagation and evaluates statistically the effect of mobility restriction policies on the spread of the disease. We apply a variation of the stochastic Susceptible-Infectious-Recovered model to describe the temporal-spatial evolution of the disease across 33 provincial regions in China, where the disease was first identified. We employ Bayesian Markov Chain Monte-Carlo methods to estimate the model and to characterize a dynamic transmission network, which enables us to evaluate the effectiveness of various local and national policies. The spread of the disease in China was predominantly driven by community transmission within regions, which dropped substantially after local governments imposed various lockdown policies. Further, Hubei was only the epicenter of the early epidemic stage. Secondary epicenters, such as Beijing and Guangdong, had already become established by late January 2020. The transmission from these epicenters substantially declined following the introduction of mobility restrictions across regions. Conclusions: The spatial transmission network is able to differentiate the effect of the local lockdown policies and the cross-region mobility restrictions. We conclude that both are important policy tools for curbing the disease transmission. The coordination between central and local governments is important in suppressing the spread of infectious diseases.",
+                keywords: "COVID-19, Infection, Heterogeneity, Spatial Model, Bayesian Analysis"
+            },
+            {
+                title: "Inference Related to Common Breaks in a Multivariate System with Joined Segmented Trends with Applications to Global and Hemispheric Temperatures",
+                author: "Francisco Estrada, Dukpa Kim, Pierre Perron",
+                venue: "Journal of Econometrics",
+                year: "2020",
+                volume: "214(1)",
+                pages: "130-152",
+                journal_link: "https://doi.org/10.1016/j.jeconom.2019.05.008",
+                working_paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3184646"
+            },
+            {
+                title: "Indirect Inference with a Non-Smooth Criterion Function",
+                author: "David Frazier, Dan Zhu",
+                venue: "Journal of Econometrics",
+                year: "2019",
+                volume: "212(2)",
+                pages: "623-645",
+                journal_link: "https://doi.org/10.1016/j.jeconom.2019.06.003",
+                working_paper: "https://ssrn.com/abstract=3226391",
+                abstract: "Indirect inference requires simulating realizations of endogenous variables from the model under study. When the endogenous variables are discontinuous functions of the model parameters, the resulting indirect inference criterion function is discontinuous and does not permit the use of derivative-based optimization routines. Using a change of variables technique, we propose a novel simulation algorithm that alleviates the discontinuities inherent in such indirect inference criterion functions, and permits the application of derivative-based optimization routines to estimate the unknown model parameters. Unlike competing approaches, this approach does not rely on kernel smoothing or bandwidth parameters. Several Monte Carlo examples that have featured in the literature on indirect inference with discontinuous outcomes illustrate the approach, and demonstrate the superior performance of this approach over existing alternatives.",
+                keywords: "Simulation estimators, Indirect inference, Discontinuous objective functions, Dynamic discrete choice models"
+            },
+            {
+                title: "Quantile Treatment Effects in Difference in Differences Models under Dependence Restrictions and with only Two Time Periods",
+                author: "Brantly Callaway, Tong Li",
+                venue: "Journal of Econometrics",
+                year: "2018",
+                volume: "206(2)",
+                pages: "395-413",
+                journal_link: "https://doi.org/10.1016/j.jeconom.2018.06.008",
+                working_paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2915947",
+                code: "https://bcallaway11.github.io/code/",
+                abstract: "This paper shows that the Conditional Quantile Treatment Effect on the Treated is identified under (i) a Conditional Distributional Difference in Differences assumption and (ii) a new assumption that the dependence (the copula) between the change in untreated potential outcomes and the initial level of untreated potential outcomes is the same for the treated group and untreated group. We consider estimation and inference with discrete covariates and propose a uniform inference procedure based on the exchangeable bootstrap. Finally, we estimate the effect of increasing the minimum wage on the distribution of earnings for subgroups defined by race, gender, and education.",
+                keywords: "Difference-in-differences, Quantile treatment effects, Copula stability, Causal inference"
+            },
+            {
+                title: "Testing for Common Breaks in a Multiple Equations System",
+                author: "Pierre Perron",
+                venue: "Journal of Econometrics",
+                year: "2018",
+                volume: "204(1)",
+                pages: "66-85",
+                journal_link: "https://doi.org/10.1016/j.jeconom.2018.01.003",
+                working_paper: "https://ssrn.com/abstract=3099872",
+                abstract: "The issue addressed in this paper is that of testing for common breaks across or within equations of a multivariate system. Our framework is very general and allows integrated regressors and trends as well as stationary regressors. The null hypothesis is that breaks in different parameters occur at common locations and are separated by some positive fraction of the sample size unless they occur across different equations. Under the alternative hypothesis, the break dates across parameters are not the same and also need not be separated by a positive fraction of the sample size whether within or across equations. The test considered is the quasi-likelihood ratio test assuming normal errors, though as usual the limit distribution of the test remains valid with non-normal errors. Of independent interest, we provide results about the rate of convergence of the estimates when searching over all possible partitions subject only to the requirement that each regime contains at least as many observations as some positive fraction of the sample size, allowing break dates not separated by a positive fraction of the sample size across equations. Simulations show that the test has good finite sample properties. We also provide an application to issues related to level shifts and persistence for various measures of inflation to illustrate its usefulness.",
+                keywords: "Change-point, Segmented regressions, Break dates, Hypothesis testing, Multiple equations systems"
+            },
+            {
+                title: "The Cross-Quantilogram: Measuring Quantile Dependence and Testing Directional Predictability between Time Series",
+                author: "Heejoon Han, Oliver Linton, Yoon-Jae Whang",
+                venue: "Journal of Econometrics",
+                year: "2016",
+                volume: "193(1)",
+                pages: "251-270",
+                journal_link: "http://www.sciencedirect.com/science/article/pii/S0304407616300458",
+                working_paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2338468",
+                code: "https://cran.r-project.org/package=quantilogram",
+                abstract: "This paper proposes the cross-quantilogram to measure the quantile dependence between two time series. We apply it to test the hypothesis that one time series has no directional predictability to another time series. We establish the asymptotic distribution of the cross-quantilogram and the corresponding test statistic. The limiting distributions depend on nuisance parameters. To construct consistent confidence intervals we employ a stationary bootstrap procedure; we establish consistency of this bootstrap. Also, we consider a self-normalized approach, which yields an asymptotically pivotal statistic under the null hypothesis of no predictability. We provide simulation studies and two empirical applications. First, we use the cross-quantilogram to detect predictability from stock variance to excess stock return. Compared to existing tools used in the literature of stock return predictability, our method provides a more complete relationship between a predictor and stock return. Second, we investigate the systemic risk of individual financial institutions, such as JP Morgan Chase, Morgan Stanley and AIG.",
+                keywords: "Quantile, Correlogram, Dependence, Predictability, Systemic risk"
+            },
+            {
+                title: "Set Identification of the Censored Quantile Regression Model for Short Panels with Fixed Effects",
+                author: "Tong Li",
+                venue: "Journal of Econometrics",
+                year: "2015",
+                volume: "188(2)",
+                pages: "363-377",
+                journal_link: "http://www.sciencedirect.com/science/article/pii/S0304407615000743",
+                working_paper: "http://dx.doi.org/10.1016/j.jeconom.2015.03.005",
+                abstract: "This paper studies identification and estimation of a censored quantile regression model for short panel data with fixed effects. Using the redistribution-of-mass idea, we obtain bounds on the conditional distribution of differences of the model across periods, under conditional quantile restrictions together with a weak conditional independence assumption along the lines of Rosen (2012). The inversion of the distribution bounds characterizes the sharp identified set via a set of inequalities based on conditional quantile functions. Due to the presence of censoring, some of the inequalities defining the identified set hold trivially and have no identification power. Moreover, those trivial inequalities cause a difficulty in estimating the identified set. To deal with the issue, we propose a two-step estimation method, where the first step consists of excluding trivial inequalities and the second step performs minimization of a convex criterion function using the remaining inequalities. We establish asymptotic properties of the set estimator and also consider sufficient conditions under which point identification can be attained.",
+                keywords: "Panel quantile regression, Fixed Effects, Censoring, Partial Identification"
+            },
+            {
+                title: "Divorce Law Reforms and Divorce Rates in the U.S.: An Interactive Fixed Effects Approach",
+                author: "Dukpa Kim",
+                venue: "Journal of Applied Econometrics",
+                year: "2014",
+                volume: "29(2)",
+                pages: "231-245",
+                journal_link: "http://onlinelibrary.wiley.com/doi/10.1002/jae.2310/abstract",
+                working_paper: "https://www.researchgate.net/publication/260678173_Divorce_law_reforms_and_divorce_rates_in_the_USA_An_interactive_fixed-effects_approach",
+                abstract: "This paper estimates the effects of unilateral divorce laws on divorce rates in the USA from a panel of state-level divorce rates. We use the interactive fixed-effects model to address the issue of endogeneity due to the association between cross-state unobserved heterogeneity and divorce law reforms. We document that earlier studies in the literature do not fully control for unobserved heterogeneity and result in mixed empirical evidence on the effects of divorce law reforms. While reconciling these conflicting results, our results suggest that divorce law reforms have temporal positive effects on divorce rates, thus confirming the 2006 findings of Wolfers. Via simulation experiments, we assess the degree to which faulty inclusion or faulty exclusion of interactive fixed effects affects the policy effect estimators. Our results suggest that faulty inclusion only results in efficiency loss whereas faulty exclusion causes bias.",
+                keywords: "Unilateral divorce laws, Difference-in-Differences, Interactive-Fixed Effects, Endogeneity"
+            },
+            {
+                title: "Estimating Structural Changes in Regression Quantiles",
+                author: "Zhongjun Qu",
+                venue: "Journal of Econometrics",
+                year: "2011",
+                volume: "162(2)",
+                pages: "248-267",
+                journal_link: "https://doi.org/10.1016/j.jeconom.2011.01.005",
+                working_paper: "https://ssrn.com/abstract=1656453",
+                code: "https://sites.bu.edu/qu/files/2023/07/qrbreak.zip",
+                abstract: "This paper considers the estimation of multiple structural changes occurring at unknown dates in one or multiple conditional quantile functions. The analysis covers time series models as well as models with repeated cross-sections. We estimate the break dates and other parameters jointly by minimizing the check function over all permissible break dates. The limiting distribution of the estimator is derived and the coverage property of the resulting confidence interval is assessed via simulations. A procedure to determine the number of breaks is also discussed. Empirical applications to the quarterly US real GDP growth rate and the underage drunk driving data suggest that the method can deliver more informative results than the analysis of the conditional mean function alone.",
+                keywords: "Multiple structural breaks, Quantile regression, Parameter instability, GDP growth rate"
+            },
+            {
+                title: "Juvenile Crime and Punishment: Evidence from Japan",
+                author: "",
+                venue: "Applied Economics",
+                year: "2009",
+                volume: "41(24)",
+                pages: "3103-3115",
+                journal_link: "https://www.tandfonline.com/doi/pdf/10.1080/00036840701365923",
+                working_paper: "https://www.researchgate.net/publication/46528827_Juvenile_crime_and_punishment_Evidence_from_Japan",
+                abstract: "Over the last decade, juvenile crime has become a serious social problem in Japan. The Juvenile Law was revised in 2001 to impose harsher punishment on juvenile offenders. This revision makes it possible to impose criminal punishment on 14- and 15-year-old criminal offenders, while those offenders aged 16–19 have always faced criminal punishment, both before and after the revision. Using this revision as a natural experiment, this study conducts a difference-in-differences estimation to examine the effect of punishment on juvenile crime. The analysis provides evidence that punishment can deter juvenile crime. In addition, this research examines the criminal behaviour of 13-year-olds, who face no change in punishment, but who soon will in the near future. The results suggest that the revision also had a negative impact on the criminal behaviour of these younger offenders.",
+                keywords: "Juvenile crime, Juvenile law, Difference-in-differences"
+            }
+            ], 
+            //------------------------------------
+            // Proceedings  ----------------------
+            //------------------------------------           
+            proceedings: [
+                {
+                    title: "Beyond the Average: Distributional Causal Inference under Imperfect Compliance",
+                    author: "Undral Byambadalai, Tomu Hirata, Shota Yasui",
+                    venue: "Neural Information Processing Systems (NeurIPS)",
+                    year: "2025",
+                    working_paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5504858",
+                    abstract: "We study the estimation of distributional treatment effects in randomized experiments with imperfect compliance. When participants do not adhere to their assigned treatments, we leverage treatment assignment as an instrumental variable to identify the local distributional treatment effect—the difference in outcome distributions between treatment and control groups for the subpopulation of compliers. We propose a regression-adjusted estimator based on a distribution regression framework with Neyman-orthogonal moment conditions, enabling robustness and flexibility with high-dimensional covariates. Our approach accommodates continuous, discrete, and mixed discrete-continuous outcomes, and applies under a broad class of covariate-adaptive randomization schemes, including stratified block designs and simple random sampling. We derive the estimator's asymptotic distribution and show that it achieves the semiparametric efficiency bound. Simulation results demonstrate favorable finite-sample performance, and we demonstrate the method's practical relevance in an application to the Oregon Health Insurance Experiment.",
+                    keywords: "Causal Inference, Distributional Treatment Effect, Covariate-Adaptive Randomization, Local Distributional Treatment Effect, Instrumental Variable"
+                },
+                {
+                    title: "Latent Variable Modeling for Robust Causal Effect Estimation",
+                    author: "Tetsuro Morimura, Yugo Suzuki, Daisuke Moriwaki",
+                    venue: "The Conference on Information and Knowledge Management (CIKM)",
+                    year: "2025",
+                    proceedings: "https://doi.org/10.1145/3746252.3761252",
+                    abstract: "Latent variable models provide a powerful framework for incorporating and inferring unobserved factors in observational data. In causal inference, they help account for hidden factors influencing treatment or outcome, thereby addressing challenges posed by missing or unmeasured covariates. This paper proposes a new framework that integrates latent variable modeling into the double machine learning (DML) paradigm to enable robust causal effect estimation in the presence of such hidden factors. We consider two scenarios: one where a latent variable affects only the outcome, and another where it may influence both treatment and outcome. To ensure tractability, we incorporate latent variables only in the second stage of DML, separating representation learning from latent inference. We demonstrate the robustness and effectiveness of our method through extensive experiments on both synthetic and real-world datasets.",
+                    keywords: "Latent Variables, Double Machine Learning, EM Algorithm"
+                },
+                {
+                    title: "Exploring Explanations Improves the Robustness of In-Context Learning",
+                    author: "Ukyo Honda",
+                    venue: "Annual Meeting of the Association for Computational Linguistics (ACL)",
+                    year: "2025",
+                    proceedings: "",
+                    working_paper: "http://dx.doi.org/10.2139/ssrn.5277637",
+                    abstract: "In-context learning (ICL) has emerged as a successful paradigm for leveraging large language models (LLMs). However, it often struggles to generalize beyond the distribution of the provided demonstrations. A recent advancement in enhancing robustness is ICL with explanations (X-ICL), which improves prediction reliability by guiding LLMs to understand and articulate the reasoning behind correct labels. Building on this approach, we introduce an advanced framework that extends X-ICL by systematically exploring explanations for all possible labels (X2-ICL), thereby enabling more comprehensive and robust decision-making. Experimental results on multiple natural language understanding datasets validate the effectiveness of X2-ICL, demonstrating significantly improved robustness to out-of-distribution data compared to the existing ICL approaches.",
+                    keywords: "In-context learning, Large Language Models, Out-of-Distribution Data, Natural Language Processing, Spurious Correlation, Latent Variables, Generative artificial intelligence"
+                },
+                {
+                    title: "On Efficient Estimation of Distributional Treatment Effects under Covariate-Adaptive Randomization",
+                    author: "Undral Byambadalai, Tomu Hirata, Shota Yasui",
+                    venue: "International Conference on Machine Learning (ICML)",
+                    year: "2025",
+                    proceedings: "https://proceedings.mlr.press/v235/byambadalai24a.html",
+                    working_paper: "https://ssrn.com/abstract=5286083",
+                    code: "https://github.com/CyberAgentAILab/dte-ml-adjustment",
+                    abstract: "This paper focuses on the estimation of distributional treatment effects in randomized experiments that use covariate-adaptive randomization (CAR). These include designs such as Efron's biased-coin design and stratified block randomization, where participants are first grouped into strata based on baseline covariates and assigned treatments within each stratum to ensure balance across groups. In practice, datasets often contain additional covariates beyond the strata indicators. We propose a flexible distribution regression framework that leverages off-the-shelf machine learning methods to incorporate these additional covariates, enhancing the precision of distributional treatment effect estimates. We establish the asymptotic distribution of the proposed estimator and introduce a valid inference procedure. Furthermore, we derive the semiparametric efficiency bound for distributional treatment effects under CAR and demonstrate that our regression adjusted estimator attains this bound. Simulation studies and empirical analyses of microcredit programs highlight the practical advantages of our method.",
+                    keywords: "Randomized Expriment, Covariate-Adaptive Randomization, Distributional Treatment Effect, Probility Treatment Effect, Semiparametric Efficiency Bound, Regression Adjustment, Covarite Adjustment"
+                },
+                {
+                    title: "Estimating Distributional Treatment Effects in Randomized Experiments: Machine Learning for Variance Reduction",
+                    author: "Undral Byambadalai, Shota Yasui",
+                    venue: "International Conference on Machine Learning (ICML)",
+                    year: "2024",
+                    proceedings: "https://proceedings.mlr.press/v235/byambadalai24a.html",
+                    working_paper: "https://ssrn.com/abstract=4910058",
+                    code: "https://github.com/CyberAgentAILab/dte-ml-adjustment",
+                    abstract: "We propose a novel regression adjustment method designed for estimating distributional treatment effect parameters in randomized experiments. Randomized experiments have been extensively used to estimate treatment effects in various scientific fields. However, to gain deeper insights, it is essential to estimate distributional treatment effects rather than relying solely on average effects. Our approach incorporates pre-treatment covariates into a distributional regression framework, utilizing machine learning techniques to improve the precision of distributional treatment effect estimators. The proposed approach can be readily implemented with off-the-shelf machine learning methods and remains valid as long as the nuisance components are reasonably well estimated. Also, we establish the asymptotic properties of the proposed estimator and present a uniformly valid inference method. Through simulation results and real data analysis, we demonstrate the effectiveness of integrating machine learning techniques in reducing the variance of distributional treatment effect estimators in finite samples.",
+                    keywords: "Randomized experiments, Distributional Treatment Effects, Machine Learning"
+                },
+                {
+                    title: "Safe Collaborative Filtering",
+                    author: "Riku Togashi, Naoto Ohsaka, Tetsuro Morimura",
+                    venue: "International Conference on Learning Representations (ICLR)",
+                    year: "2024",
+                    proceedings: "https://openreview.net/pdf?id=yarUvgEXq3",
+                    working_paper: "https://dx.doi.org/10.2139/ssrn.4767721",
+                    abstract: "Excellent tail performance is crucial for modern machine learning tasks, such as algorithmic fairness, class imbalance, and risk-sensitive decision making, as it ensures the effective handling of challenging samples within a dataset. Tail performance is also a vital determinant of success for personalized recommender systems to reduce the risk of losing users with low satisfaction. This study introduces a \"safe\" collaborative filtering method that prioritizes recommendation quality for less-satisfied users rather than focusing on the average performance. Our approach minimizes the conditional value at risk (CVaR), which represents the average risk over the tails of users' loss. To overcome computational challenges for web-scale recommender systems, we develop a robust yet practical algorithm that extends the most scalable method, implicit alternating least squares (iALS). Empirical evaluation on real-world datasets demonstrates the excellent tail performance of our approach while maintaining competitive computational efficiency.",
+                    keywords: "Recommendation, Conditional Value at Risk, Matrix Factorization, Covolution"
+                }
+            ]
+        };
+
+        // Function to toggle abstract
+        function toggleAbstract(uniqueId) {
+            const abstractDiv = document.getElementById(`abstract-${uniqueId}`);
+            if (abstractDiv.style.display === 'none' || abstractDiv.style.display === '') {
+                abstractDiv.style.display = 'block';
+            } else {
+                abstractDiv.style.display = 'none';
+            }
+            return false;
+        }
+
+        // Function to render publications
+        function renderPublications() {
+            const journalContainer = document.getElementById('journal-list');
+            journalContainer.innerHTML = generatePublicationsHTML(publications.journal, 'journal');
+            
+            const proceedingsContainer = document.getElementById('proceedings-list');
+            proceedingsContainer.innerHTML = generatePublicationsHTML(publications.proceedings, 'proceedings');
+        } 
+
+        // Publication details 
+        function generatePublicationsHTML(pubList, prefix) {
+            let html = '';
+               pubList.forEach((pub, index) => {
+                
+                // Create unique ID
+                const uniqueId = `${prefix}-${index}`;  
+
+                // Build links HTML
+                let links = '';
+                if (pub.proceedings)   links += `<a href="${pub.proceedings}" class="b">Conference Proceedings</a>`;
+                if (pub.journal_link)  links += `<a href="${pub.journal_link}" class="b" target="_blank">Journal</a>`;
+                if (pub.working_paper) links += `<a href="${pub.working_paper}" class="b">Working Paper</a>`;
+                if (pub.abstract)      links += `<a href="#" onclick="return toggleAbstract('${uniqueId}')" class="b">Abstract</a>`; 
+                if (pub.arxiv)         links += `<a href="${pub.arxiv}" class="b">arXiv</a>`;
+                if (pub.code)          links += `<a href="${pub.code}" class="b">Code</a>`;
+                if (pub.slides)        links += `<a href="${pub.slides}" class="b">Slides</a>`;
+
+                // Build venue string properly
+                let venueStr = `<span class="venue">${pub.venue}</span>, ${pub.year},`;
+                if (pub.volume) venueStr += ` ${pub.volume}`;
+                if (pub.pages) venueStr += `, pp. ${pub.pages}`;
+                venueStr += `, with ${pub.author}`;
+
+                html += `
+                <div class="publication">
+                    <div class="pub-title">${pub.title}</div>
+                    <div class="pub-venue">${venueStr}</div>
+                    <div>${links}</div>
+                    ${pub.abstract ? `
+                        <div id="abstract-${uniqueId}" class="abstract" style="display: none;">
+                            <strong>Abstract:</strong> ${pub.abstract}
+                            ${pub.keywords ? `<div style="margin-top: 8px;"><strong>Keywords:</strong> ${pub.keywords}</div>` : ''}
+                        </div>
+                    ` : ''}
+                </div>
+                `;                
+            });
+          
+            return html;
+        }
+
+        // Render publications when page loads
+        document.addEventListener('DOMContentLoaded', renderPublications);
+
+
+        
+
+    </script>
+
+
+    <!-------------------------->
+    <!-- Articles Display     -->
+    <!-------------------------->
+    <h2>Working Papers</h2>
+    <div class="publication-list" id="working-papers-list"></div>
+
+    <h2>Journal Articles</h2>
+    <div class="publication-list" id="journal-list"></div>
+    
+    <h2>Conference Proceedings</h2>
+    <div class="publication-list" id="proceedings-list"></div>
     
 
-
-
-        <div class="publication">
-            <p><span class="article-title">Testing for Common Breaks in a Multiple Equations System</span></p>
-            <p><span class="journal">Journal of Econometrics</span>, May 2018, 204(1) pp. 66-85, with Pierre Perron</p>
-            <p>
-                <a href="https://doi.org/10.1016/j.jeconom.2018.01.003" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>Journal of Econometrics</a> 
-                    &hairsp;
-                <a href="https://ssrn.com/abstract=3099872" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a>
-                    &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-PO2018JoE').style.display 
-                = document.getElementById('abstract-PO2018JoE').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-PO2018JoE" class="abstract-content">
-                        The issue addressed in this paper is that of testing for common breaks across or within equations of a multivariate system. Our framework is very general and allows integrated regressors and trends as well as stationary regressors. The null hypothesis is that breaks in different parameters occur at common locations and are separated by some positive fraction of the sample size unless they occur across different equations. Under the alternative hypothesis, the break dates across parameters are not the same and also need not be separated by a positive fraction of the sample size whether within or across equations. The test considered is the quasi-likelihood ratio test assuming normal errors, though as usual the limit distribution of the test remains valid with non-normal errors. Of independent interest, we provide results about the rate of convergence of the estimates when searching over all possible partitions subject only to the requirement that each regime contains at least as many observations as some positive fraction of the sample size, allowing break dates not separated by a positive fraction of the sample size across equations. Simulations show that the test has good finite sample properties. We also provide an application to issues related to level shifts and persistence for various measures of inflation to illustrate its usefulness.
-
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Change-point, Segmented regressions, Break dates, Hypothesis testing, Multiple equations systems
-                        </p> 
-                    </div>        
-            </p>
-        </div>
-    
-
-
-
-        <div class="publication">
-            <p><span class="article-title">The Cross-Quantilogram: Measuring Quantile Dependence and Testing Directional Predictability between Time Series</span></p>
-            <p><span class="journal">Journal of Econometrics</span>, July 2016, 193(1), pp. 251-270, with Heejoon Han, Oliver Linton and Yoon-Jae Whang</p>
-            <p>
-                <a href="http://www.sciencedirect.com/science/article/pii/S0304407616300458" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: -2px;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>Journal of Econometrics</a> 
-                    &hairsp; 
-                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2338468" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: -3px;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a> 
-                    &hairsp;
-                <a href="https://cran.r-project.org/package=quantilogram" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: -2px;">
-                    <use href="#icon-package"></use>
-                </svg>R-package</a>
-                &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-HLOW2016JoE').style.display 
-                = document.getElementById('abstract-HLOW2016JoE').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-HLOW2016JoE" class="abstract-content">
-                        This paper proposes the cross-quantilogram to measure the quantile dependence between two time series. We apply it to test the hypothesis that one time series has no directional predictability to another time series. We establish the asymptotic distribution of the cross-quantilogram and the corresponding test statistic. The limiting distributions depend on nuisance parameters. To construct consistent confidence intervals we employ a stationary bootstrap procedure; we establish consistency of this bootstrap. Also, we consider a self-normalized approach, which yields an asymptotically pivotal statistic under the null hypothesis of no predictability. We provide simulation studies and two empirical applications. First, we use the cross-quantilogram to detect predictability from stock variance to excess stock return. Compared to existing tools used in the literature of stock return predictability, our method provides a more complete relationship between a predictor and stock return. Second, we investigate the systemic risk of individual financial institutions, such as JP Morgan Chase, Morgan Stanley and AIG.
-
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Quantile, Correlogram, Dependence, Predictability, Systemic risk
-                        </p> 
-                    </div>                        
-            </p>
-        </div>
-    
-        <div class="publication">
-            <p><span class="article-title">Set Identification of the Censored Quantile Regression Model for Short Panels with Fixed Effects</span></p>
-            <p><span class="journal">Journal of Econometrics</span>, October 2015, 188(2), pp. 363-377, with Tong Li</p>
-            <p>
-                <a href="http://www.sciencedirect.com/science/article/pii/S0304407615000743" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>Journal of Econometrics</a> &hairsp;
-                <a href="http://dx.doi.org/10.1016/j.jeconom.2015.03.005" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a>
-                &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-LO2015JoE').style.display 
-                = document.getElementById('abstract-LO2015JoE').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-LO2015JoE" class="abstract-content">
-                        This paper studies identification and estimation of a censored quantile regression model for short panel data with fixed effects. Using the redistribution-of-mass idea, we obtain bounds on the conditional distribution of differences of the model across periods, under conditional quantile restrictions together with a weak conditional independence assumption along the lines of Rosen (2012). The inversion of the distribution bounds characterizes the sharp identified set via a set of inequalities based on conditional quantile functions. Due to the presence of censoring, some of the inequalities defining the identified set hold trivially and have no identification power. Moreover, those trivial inequalities cause a difficulty in estimating the identified set. To deal with the issue, we propose a two-step estimation method, where the first step consists of excluding trivial inequalities and the second step performs minimization of a convex criterion function using the remaining inequalities. We establish asymptotic properties of the set estimator and also consider sufficient conditions under which point identification can be attained.
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Panel quantile regression, Fixed Effects, Censoring, Partial Identification
-                        </p> 
-                    </div>                        
-
-            </p>
-        </div>
-    
-        <div class="publication">
-            <p><span class="article-title">Divorce Law Reforms and Divorce Rates in the U.S.: An Interactive Fixed Effects Approach</span></p>
-            <p><span class="journal">Journal of Applied Econometrics</span>, March 2014, 29(2), pp. 231-245, with Dukpa Kim</p>
-            <p>
-                <a href="http://onlinelibrary.wiley.com/doi/10.1002/jae.2310/abstract" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>Journal of Applied Econometrics</a> &hairsp;
-                <a href="https://www.researchgate.net/publication/260678173_Divorce_law_reforms_and_divorce_rates_in_the_USA_An_interactive_fixed-effects_approach" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a>
-                    &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-KO2014JAE').style.display 
-                = document.getElementById('abstract-KO2014JAE').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-KO2014JAE" class="abstract-content">
-                        This paper estimates the effects of unilateral divorce laws on divorce rates in the USA from a panel of state-level divorce rates. We use the interactive fixed-effects model to address the issue of endogeneity due to the association between cross-state unobserved heterogeneity and divorce law reforms. We document that earlier studies in the literature do not fully control for unobserved heterogeneity and result in mixed empirical evidence on the effects of divorce law reforms. While reconciling these conflicting results, our results suggest that divorce law reforms have temporal positive effects on divorce rates, thus confirming the 2006 findings of Wolfers. Via simulation experiments, we assess the degree to which faulty inclusion or faulty exclusion of interactive fixed effects affects the policy effect estimators. Our results suggest that faulty inclusion only results in efficiency loss whereas faulty exclusion causes bias.
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Unilateral divorce laws, Difference-in-Differences, Interactive-Fixed Effects, Endogeneity
-                        </p> 
-                    </div>                        
-            </p>
-        </div>
-    
-        <div class="publication">
-            <p><span class="article-title">Estimating Structural Changes in Regression Quantiles</span></p>
-            <p><span class="journal">Journal of Econometrics</span>, June 2011, 162(2), pp. 248-267, with Zhongjun Qu</p>
-            <p>
-                <a href="https://doi.org/10.1016/j.jeconom.2011.01.005" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>Journal of Econometrics</a> &hairsp;
-                <a href="https://ssrn.com/abstract=1656453" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a> &hairsp;
-                <a href="https://sites.bu.edu/qu/files/2023/07/qrbreak.zip" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: -2px;">
-                    <use href="#icon-package"></use>
-                </svg>R-code</a>
-                &hairsp;
-               <!-- ABSTRACT: Change ID-->
-               <a href="#" class="paper-link" 
-               onclick="document.getElementById('abstract-OQ2011JoE').style.display 
-               = document.getElementById('abstract-OQ2011JoE').style.display === 'block' ? 'none' : 'block'; return false;">
-                   <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                       <use href="#triangle-down-icon"></use>
-                   </svg>Abstract 
-                   </a> 
-                   </p>
-                   <div id="abstract-OQ2011JoE" class="abstract-content">
-                    This paper considers the estimation of multiple structural changes occurring at unknown dates in one or multiple conditional quantile functions. The analysis covers time series models as well as models with repeated cross-sections. We estimate the break dates and other parameters jointly by minimizing the check function over all permissible break dates. The limiting distribution of the estimator is derived and the coverage property of the resulting confidence interval is assessed via simulations. A procedure to determine the number of breaks is also discussed. Empirical applications to the quarterly US real GDP growth rate and the underage drunk driving data suggest that the method can deliver more informative results than the analysis of the conditional mean function alone.
-
-                       <p style="margin-top: 12px;">
-                           <i>Keywords</i>: 
-                           Multiple structural breaks, Quantile regression, Parameter instability, GDP growth rate
-                       </p> 
-                   </div>                 
-            </p>
-        </div>
-
-        <div class="publication">
-            <p><span class="article-title">Juvenile Crime and Punishment: Evidence from Japan</span></p>
-            <p><span class="journal">Applied Economics</span>, 2009, 41(24), pp. 3103-3115.</p>
-            <p>
-                <a href="https://www.tandfonline.com/doi/pdf/10.1080/00036840701365923" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>Applied Economics</a> 
-            &hairsp;
-            <a href="https://www.researchgate.net/publication/46528827_Juvenile_crime_and_punishment_Evidence_from_Japan" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                </svg>Working Paper</a> 
-                &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-O2009AE').style.display 
-                = document.getElementById('abstract-O2009AE').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-O2009AE" class="abstract-content">
-                        Over the last decade, juvenile crime has become a serious social problem in Japan. The Juvenile Law was revised in 2001 to impose harsher punishment on juvenile offenders. This revision makes it possible to impose criminal punishment on 14- and 15-year-old criminal offenders, while those offenders aged 16–19 have always faced criminal punishment, both before and after the revision. Using this revision as a natural experiment, this study conducts a difference-in-differences estimation to examine the effect of punishment on juvenile crime. The analysis provides evidence that punishment can deter juvenile crime. In addition, this research examines the criminal behaviour of 13-year-olds, who face no change in punishment, but who soon will in the near future. The results suggest that the revision also had a negative impact on the criminal behaviour of these younger offenders.
-
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Juvenile crime, Juvenile law, Difference-in-differences
-                        </p> 
-                    </div>                        
-            </p> 
-        </div>
-
-
-    <!-- ----------- -->
-    <!-- conference -->
-    <!-- ----------- -->
-    <div style="height: 5px;"></div>
-    <h4 class="with-square-mark"> Conference Proceedings</h4>
-
-
-    <!-- Conference Paper -->
-    <div class="publication">
-        <p><span class="article-title">Beyond the Average: Distributional Causal Inference under Imperfect Compliance</span></p>
-        <p><span class="journal">Neural Information Processing Systems (NeurIPS)</span>, 
-            2025, with Undral Byambadalai, Tomu Hirata and Shota Yasui
-        </p>
-        <p>
-            <!-- Comment off
-            <a href="" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                </svg>NeurIPS</a> &hairsp;
-            -->
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5504858" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                </svg>Working Paper</a> &hairsp;
-               <!-- ABSTRACT: Change ID-->
-               <a href="#" class="paper-link" 
-               onclick="document.getElementById('abstract-BHOY2025NeurIPS').style.display 
-               = document.getElementById('abstract-BHOY2025NeurIPS').style.display === 'block' ? 'none' : 'block'; return false;">
-                   <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                       <use href="#triangle-down-icon"></use>
-                   </svg>Abstract 
-                   </a> 
-                   </p>
-                   <div id="abstract-BHOY2025NeurIPS" class="abstract-content">
-                    We study the estimation of distributional treatment effects in randomized experiments with imperfect compliance. When participants do not adhere to their assigned treatments, we leverage treatment assignment as an instrumental variable to identify the local distributional treatment effect—the difference in outcome distributions between treatment and control groups for the subpopulation of compliers. We propose a regression-adjusted estimator based on a distribution regression framework with Neyman-orthogonal moment conditions, enabling robustness and flexibility with high-dimensional covariates. Our approach accommodates continuous, discrete, and mixed discrete-continuous outcomes, and applies under a broad class of covariate-adaptive randomization schemes, including stratified block designs and simple random sampling. We derive the estimator’s asymptotic distribution and show that it achieves the semiparametric efficiency bound. Simulation results demonstrate favorable finite-sample performance, and we demonstrate the method’s practical relevance in an application to the Oregon Health Insurance Experiment.
-
-
-                       <p style="margin-top: 12px;">
-                           <i>Keywords</i>: 
-                           Causal Inference, Distributional Treatment Effect, Covariate-Adaptive Randomization, Local Distributional Treatment Effect, Instrumental Variable
-                       </p> 
-                   </div>                       
-        </p>
     </div>
 
 
-    <!-- Conference Paper -->
-    <div class="publication">
-        <p><span class="article-title">Latent Variable Modeling for Robust Causal Effect Estimation </span></p>
-        <p> <span class="journal">The Conference on Information and Knowledge Management (CIKM)</span>, 
-            2025,
-            with Tetsuro Morimura, Yugo Suzuki and Daisuke Moriwaki</p>
-        <p>
-            <a href="https://doi.org/10.1145/3746252.3761252" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                </svg>CKIM</a> &hairsp;
-               <!-- ABSTRACT: Change ID-->
-               <a href="#" class="paper-link" 
-               onclick="document.getElementById('abstract-MOSM2025CKIM').style.display 
-               = document.getElementById('abstract-MOSM2025CKIM').style.display === 'block' ? 'none' : 'block'; return false;">
-                   <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                       <use href="#triangle-down-icon"></use>
-                   </svg>Abstract 
-                   </a> 
-                   </p>
-                   <div id="abstract-MOSM2025CKIM" 
-                   class="abstract-content">
-                    Latent variable models provide a powerful framework for incorporating and inferring unobserved factors in observational data. In causal inference, they help account for hidden factors influencing treatment or outcome, thereby addressing challenges posed by missing or unmeasured covariates. This paper proposes a new framework that integrates latent variable modeling into the double machine learning (DML) paradigm to enable robust causal effect estimation in the presence of such hidden factors. We consider two scenarios: one where a latent variable affects only the outcome, and another where it may influence both treatment and outcome. To ensure tractability, we incorporate latent variables only in the second stage of DML, separating representation learning from latent inference. We demonstrate the robustness and effectiveness of our method through extensive experiments on both synthetic and real-world datasets.
-
-                       <p style="margin-top: 12px;">
-                           <i>Keywords</i>: 
-                           Latent Variables, Double Machine Learning, EM Algorithm
-                       </p> 
-                   </div>                       
-        </p>
-    </div>
-
-
-    <!-- Conference Paper -->
-    <div class="publication">
-        <p><span class="article-title">Exploring Explanations Improves the Robustness of In-Context Learning</span></p>
-        <p> <span class="journal">Annual Meeting of the Association for Computational Linguistics (ACL)</span>, 
-            2025 with Ukyo Honda</p>
-        <p>
-            <a href="" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                </svg>ACL</a> &hairsp;
-            <a href="http://dx.doi.org/10.2139/ssrn.5277637" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                </svg>Working Paper</a> &hairsp;
-               <!-- ABSTRACT: Change ID-->
-               <a href="#" class="paper-link" 
-               onclick="document.getElementById('abstract-HO2025ACL').style.display 
-               = document.getElementById('abstract-HO2025ACL').style.display === 'block' ? 'none' : 'block'; return false;">
-                   <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                       <use href="#triangle-down-icon"></use>
-                   </svg>Abstract 
-                   </a> 
-                   </p>
-                   <div id="abstract-HO2025ACL" class="abstract-content">
-                    In-context learning (ICL) has emerged as a successful paradigm for leveraging large language models (LLMs). However, it often struggles to generalize beyond the distribution of the provided demonstrations. A recent advancement in enhancing robustness is ICL with explanations (X-ICL), which improves prediction reliability by guiding LLMs to understand and articulate the reasoning behind correct labels. Building on this approach, we introduce an advanced framework that extends X-ICL by systematically exploring explanations for all possible labels (X2-ICL), thereby enabling more comprehensive and robust decision-making. Experimental results on multiple natural language understanding datasets validate the effectiveness of X2-ICL, demonstrating significantly improved robustness to out-of-distribution data compared to the existing ICL approaches. 
-
-
-                       <p style="margin-top: 12px;">
-                           <i>Keywords</i>: 
-                           In-context learning, Large Language Models, Out-of-Distribution Data, Natural Language Processing, Spurious Correlation, Latent Variables, Generative artificial intelligence
-                       </p> 
-                   </div>                       
-        </p>
-    </div>
-
-    <!-- Conference Paper -->
-    <div class="publication">
-        <p><span class="article-title">On Efficient Estimation of Distributional Treatment Effects under Covariate-Adaptive Randomization</span></p>
-        <p><span class="journal">International Conference on Machine Learning (ICML)</span>, 2025, with Undral Byambadalai, Tomu Hirata, Shota Yasui</p>
-        <p>
-            <a href="https://proceedings.mlr.press/v235/byambadalai24a.html" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                </svg>ICML</a> &hairsp;
-            <a href="https://ssrn.com/abstract=5286083" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                </svg>Working Paper</a> &hairsp;
-            <a href="https://github.com/CyberAgentAILab/dte-ml-adjustment" class="paper-link" target="_blank" rel="noopener noreferrer">R-code</a> &hairsp;
-               <!-- ABSTRACT: Change ID-->
-               <a href="#" class="paper-link" 
-               onclick="document.getElementById('abstract-UHOY2025ICML').style.display 
-               = document.getElementById('abstract-UHOY2025ICML').style.display === 'block' ? 'none' : 'block'; return false;">
-                   <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                       <use href="#triangle-down-icon"></use>
-                   </svg>Abstract 
-                   </a> 
-                   </p>
-                   <div id="abstract-UHOY2025ICML" class="abstract-content">
-                    This paper focuses on the estimation of distributional treatment effects in randomized experiments that use covariate-adaptive randomization (CAR). These include designs such as Efron's biased-coin design and stratified block randomization, where participants are first grouped into strata based on baseline covariates and assigned treatments within each stratum to ensure balance across groups. In practice, datasets often contain additional covariates beyond the strata indicators. We propose a flexible distribution regression framework that leverages off-the-shelf machine learning methods to incorporate these additional covariates, enhancing the precision of distributional treatment effect estimates. We establish the asymptotic distribution of the proposed estimator and introduce a valid inference procedure. Furthermore, we derive the semiparametric efficiency bound for distributional treatment effects under CAR and demonstrate that our regression adjusted estimator attains this bound. Simulation studies and empirical analyses of microcredit programs highlight the practical advantages of our method.  
-
-
-                       <p style="margin-top: 12px;">
-                           <i>Keywords</i>: 
-                           Randomized Expriment, Covariate-Adaptive Randomization, Distributional Treatment Effect, Probility Treatment Effect, Semiparametric Efficiency Bound, Regression Adjustment, Covarite Adjustment
-                       </p> 
-                   </div>                      
-        </p>
-    </div>
-
-    <!-- Conference Paper -->
-    <div class="publication">
-            <p><span class="article-title">Estimating Distributional Treatment Effects in Randomized Experiments: Machine Learning for Variance Reduction</span></p>
-            <p><span class="journal">International Conference on Machine Learning (ICML)</span>, 2024, with Undral Byambadalai, Shota Yasui</p>
-            <p>
-                <a href="https://proceedings.mlr.press/v235/byambadalai24a.html" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>ICML</a> &hairsp;
-                <a href="https://ssrn.com/abstract=4910058" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a> &hairsp;
-                <a href="https://github.com/CyberAgentAILab/dte-ml-adjustment" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: -2px;">
-                    <use href="#icon-package"></use>
-                </svg>R-code</a> &hairsp;
-               <!-- ABSTRACT: Change ID-->
-               <a href="#" class="paper-link" 
-               onclick="document.getElementById('abstract-BOY2024ICML').style.display 
-               = document.getElementById('abstract-BOY2024ICML').style.display === 'block' ? 'none' : 'block'; return false;">
-                   <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                       <use href="#triangle-down-icon"></use>
-                   </svg>Abstract 
-                   </a> 
-                   </p>
-                   <div id="abstract-BOY2024ICML" class="abstract-content">
-                    We propose a novel regression adjustment method designed for estimating distributional treatment effect parameters in randomized experiments. Randomized experiments have been extensively used to estimate treatment effects in various scientific fields. However, to gain deeper insights, it is essential to estimate distributional treatment effects rather than relying solely on average effects. Our approach incorporates pre-treatment covariates into a distributional regression framework, utilizing machine learning techniques to improve the precision of distributional treatment effect estimators. The proposed approach can be readily implemented with off-the-shelf machine learning methods and remains valid as long as the nuisance components are reasonably well estimated. Also, we establish the asymptotic properties of the proposed estimator and present a uniformly valid inference method. Through simulation results and real data analysis, we demonstrate the effectiveness of integrating machine learning techniques in reducing the variance of distributional treatment effect estimators in finite samples. 
-
-                       <p style="margin-top: 12px;">
-                           <i>Keywords</i>: 
-                           Randomized experiments, Distributional Treatment Effects, Machine Learning
-                       </p> 
-                   </div>                                       
-            </p>
-        </div>
-
-
-     <!-- Conference Paper -->
-       <div class="publication">
-            <p><span class="article-title">Safe Collaborative Filtering</span></p>
-            <p><span class="journal">International Conference on Learning Representations (ICLR)</span>, 2024, with Riku Togashi, Naoto Ohsaka, Tetsuro Morimura</p>
-            <p></p>
-            <p>
-                <a href="https://openreview.net/pdf?id=yarUvgEXq3" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>ICLR</a> &hairsp;
-                <a href="https://dx.doi.org/10.2139/ssrn.4767721" class="paper-link" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                        <use href="#file-icon" fill="none" stroke="currentColor" stroke-width="2"></use>
-                    </svg>Working Paper</a> &hairsp;
-                <!-- ABSTRACT: Change ID-->
-                <a href="#" class="paper-link" 
-                onclick="document.getElementById('abstract-TOOM2024ICLR').style.display 
-                = document.getElementById('abstract-TOOM2024ICLR').style.display === 'block' ? 'none' : 'block'; return false;">
-                    <svg width="16" height="16" style="display: inline-block; margin-right: 4px; vertical-align: middle; fill: currentColor;">
-                        <use href="#triangle-down-icon"></use>
-                    </svg>Abstract 
-                    </a> 
-                    </p>
-                    <div id="abstract-TOOM2024ICLR" class="abstract-content">
-                        Excellent tail performance is crucial for modern machine learning tasks, such as algorithmic fairness, class imbalance, and risk-sensitive decision making, as it ensures the effective handling of challenging samples within a dataset. Tail performance is also a vital determinant of success for personalized recommender systems to reduce the risk of losing users with low satisfaction. This study introduces a ``safe'' collaborative filtering method that prioritizes recommendation quality for less-satisfied users rather than focusing on the average performance. Our approach minimizes the conditional value at risk (CVaR), which represents the average risk over the tails of users' loss. To overcome computational challenges for web-scale recommender systems, we develop a robust yet practical algorithm that extends the most scalable method, implicit alternating least squares (iALS). Empirical evaluation on real-world datasets demonstrates the excellent tail performance of our approach while maintaining competitive computational efficiency.
-
-                        <p style="margin-top: 12px;">
-                            <i>Keywords</i>: 
-                            Recommendation, Conditional Value at Risk, Matrix Factorization, Covolution
-                        </p> 
-                    </div>                        
-            </p>
-        </div>
 
 
 
 
-    </div> <!--- List --->  
 
 
 
@@ -1021,38 +540,21 @@
     <!-- Software -->
     <!-- ----------- -->
     <div class="single-column">
-        <h3>Statistical Packages</h3>
+        <h2>Statistical Packages</h2>
 
 
         <div class="publication research-grant">
-            <p>
-            <!-- Package name with badge style -->
             <span class="article-title">
-                <span style="background-color: #4b8cca; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; margin-right: 4px;">
-                    quantilogram
-                </span>
                 Cross-Quantilogram
             </span>
-            </p>
-            <a href="https://CRAN.R-project.org/package=quantilogram" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: -2px;">
-                    <use href="#icon-package"></use>
-                </svg>R-Package</a> 
+            <a href="https://CRAN.R-project.org/package=quantilogram" class="b">R-Package: quantilogram</a> 
         </div>
 
         <div class="publication research-grant">
-            <p>
-            <!-- Package name with badge style -->
             <span class="article-title">
-                <span style="background-color: #4b8cca; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; margin-right: 4px;">
-                    QR.break</span>
                 Structural Breaks in Quantile Regression 
             </span>
-            </p>
-            <a href="https://CRAN.R-project.org/package=QR.break" class="paper-link" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: -2px;">
-                <use href="#icon-package"></use>
-            </svg>R-Package</a> 
+            <a href="https://CRAN.R-project.org/package=QR.break" class="b">R-Package: QR.break</a> 
         </div>
 
         <!-- ----------- -->
@@ -1061,46 +563,15 @@
         <div class="single-column">
         <h3>External Profiles</h3>
 
-        <p style="display: flex; gap: 5px; align-items: center;">
-            <a href="https://arxiv.org/a/oka_t_1.html" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                    <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>arXiv
-            </a> |
-        
-            <a href="https://dblp.org/pid/349/0354.html" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                </svg>DBLP
-            </a> |
-            <a href="https://scholar.google.com/citations?user=-9b2HAUAAAAJ&hl=en" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                </svg>Google Scholar
-            </a> |
-        
-            <a href="https://orcid.org/0000-0002-8868-6136" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                </svg>ORCID</a>|
-            <a href="https://www.webofscience.com/wos/author/record/HTR-1004-2023" class="paper-link" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 4px; vertical-align: middle;">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                </svg>Web of Science
-            </a>
-        </p>
+        <div style="margin-left: 22px;">
+            <a href="https://arxiv.org/a/oka_t_1.html" class="b">arXiv</a>         
+            <a href="https://dblp.org/pid/349/0354.html" class="b">DBLP</a>
+            <a href="https://scholar.google.com/citations?user=-9b2HAUAAAAJ&hl=en" class="b">Google Scholar</a>
+            <a href="https://orcid.org/0000-0002-8868-6136" class="b">ORCID</a>
+            <a href="https://www.webofscience.com/wos/author/record/HTR-1004-2023" class="b">Web of Science</a>
+        </div>
 
-
+ 
         <!-- ----------- -->
         <!-- Grant -->
         <!-- ----------- -->
@@ -1134,10 +605,6 @@
     </div>
 
 
- 
-    
-
-
 </body>
 <header>    
     <!-- Second instance causing the duplicate -->
@@ -1161,6 +628,29 @@
     footer {
         text-align: center;
     }
+</style>
+
+
+<!-- ONE SINGLE CLEAN STYLE BLOCK -->
+<style>
+.btn-sm.z-depth-0 {
+  display: inline-block !important;
+  margin: 0 4px 6px 0 !important;
+  padding: 4px 10px !important;
+  font-size: 0.84rem !important;
+  border: 1.3px solid #555 !important;
+  border-radius: 0.2rem !important;
+  background: transparent !important;
+  color: #333 !important;
+  text-decoration: none !important;     
+  transition: all 0.2s;
+}
+.btn-sm.z-depth-0:hover {
+  background: #f8f8f8 !important;
+  border-color: #000 !important;
+  color: #000 !important;
+  text-decoration: none !important;
+}
 </style>
 
 </html>

@@ -1,10 +1,9 @@
 /* style css file */
 body {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400; 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.5;
     color: #333;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     font-size: 16px;
@@ -37,7 +36,7 @@ h1 {
 }
 h2 {
     color: #2c3e50;
-    margin-top: 0.5em;
+    margin-top: 0.3em;
     margin-bottom: 0.2em;
     font-size: 1.2em;
     line-height: 1.1;
@@ -71,14 +70,15 @@ ul li, p {
 }
 .publication, .conference-proceeding, .working-paper, .Links, .research-grant {
     margin-top: 0.5em; 
-    margin-bottom: 0.5em;
+    margin-bottom: 0.0em;
     padding-left: 1.5em;
     position: relative;
 }
 
 .publication-list {
     counter-reset: publication-counter;
-    margin-top: 0.5em; 
+    margin-top: 0.0em; 
+    margin-bottom: 0;
     padding-left: 0.5em;
     position: relative;
 }
@@ -118,7 +118,7 @@ ul li, p {
 
 
 
-.publication p, .working-paper p, .research-grant p {
+.research-grant p {
     margin: 0;
     padding: 0;
     line-height: 1.2;
@@ -126,30 +126,12 @@ ul li, p {
 .article-title {
     font-weight: bold;
 }
-.journal {
-    font-style: italic;
-}    
 .paper-link {
     font-family: 'Roboto'; 
     font-weight: 700; /* Slightly bold */
     color: hsl(209, 25%, 24%);; /* Dark blue color, you can change this */
     text-decoration: none; /* Removes underline from links */
     text-shadow: 0.2px 0 0 currentColor; /* Creates the subtle bold effect */
-}
-.paper-link:hover {
-    text-decoration: underline; /* Adds underline on hover */
-}
-.separator {
-    font-weight: normal; /* Normal weight for the separator */
-    margin: 0 0.1em; /* Add some space around the separator */
-}
-@media (max-width: 708px) {
-    .info-container {
-        flex-direction: column;
-    }
-    .left-column, .right-column {
-        width: 100%;
-    }
 }
 .academic-positions {
     padding-left: 0;
@@ -240,7 +222,6 @@ text-align: left;
 }
 
 
-
 code {
     font-family: monospace;
     background-color: #f5f5f5;
@@ -250,67 +231,69 @@ code {
     display: inline-block;  /* Needed for shadow to show properly */
 }
 
+/******************************/
+/* New Style */
+/******************************/
 
-
-
-/***** ABSTRACT *******/ 
-/* Style for the abstract content */
-.abstract-toggle {
-    display: none; /* Hide the checkbox */
-  }
-  
-  .abstract-content {
-    background-color: #f9f9f9;
-    border: 1px solid #e8e8e8;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    max-width: 800px; /* Controls the maximum width of the text */
-    text-align: justify; /* Creates even text edges on both sides */
-    hyphens: auto; /* Enables hyphenation for better text flow */
-    line-height: 1.5; /* Improves readability with consistent line spacing */
-  }
-  
-  /* Show content when checkbox is checked */
-  .abstract-toggle:checked ~ .abstract-content {
-    display: block;
-  }
-
-/* SVGs */
-.icon {
+.container {
+    margin-top: 3rem;
+}
+.post-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.font-weight-bold {
+    font-weight: bold;
+}
+.desc {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+.pub-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0px;
+}
+.pub-authors {
+    margin-bottom: 2px;
+    color: #333;
+}
+.pub-venue {
+    font-style: normal;
+    color: #555;
+    margin-bottom: 4px;
+}
+.pub-venue .venue {
+    font-weight: 510;       
+    color: #555;             
+}
+.b {
     display: inline-block;
-    margin-right: 4px;
-    vertical-align: middle;
-    fill: none; 
-    stroke: currentColor;
-    stroke-width: 2;
+    margin: 0 5px 6px 0;
+    padding: 2px 8px;
+    font-size: 0.82rem;
+    border: 1.3px solid #555;
+    border-radius: 0.2rem;
+    background: transparent;
+    color: #333;
+    text-decoration: none;
+    transition: all .2s;
 }
-
-.link-icon {
-    width: 14px;
-    height: 14px;
+.b:hover {
+    background: #f8f8f8;
+    border-color: #000;
+    color: #000;
 }
-
-.file-icon {
-    width: 15px;
-    height: 15px;
+.abstract {
+    margin-top: 12px;
+    padding: 12px;
+    background: #f5f5f5;
+    border-left: 3px solid rgb(180, 181, 181);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: justify;  
 }
-
-.abstract-toggle {
-    display: inline;
-    cursor: pointer;
-}
-
-.abstract-content {
-    display: none;
-    background-color: #f9f9f9;
-    border: 1px solid #e8e8e8;
-    padding: 10px;
-    margin-top: 5px;
-}
-
-
 
 
 
