@@ -272,7 +272,9 @@
                 volume: "214(1)",
                 pages: "130-152",
                 journal_link: "https://doi.org/10.1016/j.jeconom.2019.05.008",
-                working_paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3184646"
+                working_paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3184646",
+                abstract: "What transpires from recent research is that temperatures and radiative forcing seem to be characterized by a linear trend with two changes in the rate of growth. The first occurs in the early 60s and indicates a very large increase in the rate of growth of both temperature and radiative forcing series. This was termed as the ``onset of sustained global warming''. The second is related to the more recent so-called hiatus period, which suggests that temperatures and total radiative forcing have increased less rapidly since the mid-90s compared to the larger rate of increase from 1960 to 1990. There are two issues that remain unresolved. The first is whether the breaks in the slope of the trend functions of temperatures and radiative forcing are common. This is important because common breaks coupled with the basic science of climate change would strongly suggest a causal effect from anthropogenic factors to temperatures. The second issue relates to establishing formally via a proper testing procedure that takes into account the noise in the series, whether there was indeed a 'hiatus period' for temperatures since the mid 90s. This is important because such a test would counter the widely held view that the hiatus is the product of natural internal variability. Our paper provides tests related to both issues. The results show that the breaks in temperatures and radiative forcing are common and that the hiatus is characterized by a significant decrease in their rate of growth. The statistical results are of independent interest and applicable more generally.", 
+                keywords: "Multiple breaks, Common breaks, Multivariate regressions, Joined segmented trend"
             },
             {
                 title: "Indirect Inference with a Non-Smooth Criterion Function",
@@ -471,13 +473,12 @@
 
                 // Build links HTML
                 let links = '';
-                if (pub.proceedings)   links += `<a href="${pub.proceedings}" class="b">Conference Proceedings</a>`;
-                if (pub.journal_link)  links += `<a href="${pub.journal_link}" class="b" target="_blank">Journal</a>`;
-                if (pub.working_paper) links += `<a href="${pub.working_paper}" class="b">Working Paper</a>`;
                 if (pub.abstract)      links += `<a href="#" onclick="return toggleAbstract('${uniqueId}')" class="b">Abstract</a>`; 
-                if (pub.arxiv)         links += `<a href="${pub.arxiv}" class="b">arXiv</a>`;
-                if (pub.code)          links += `<a href="${pub.code}" class="b">Code</a>`;
-                if (pub.slides)        links += `<a href="${pub.slides}" class="b">Slides</a>`;
+                if (pub.working_paper) links += `<a href="${pub.working_paper}" class="b" target="_blank">Working Paper</a>`;
+                if (pub.proceedings)   links += `<a href="${pub.proceedings}" class="b" target="_blank">Conference Proceedings</a>`;
+                if (pub.journal_link)  links += `<a href="${pub.journal_link}" class="b" target="_blank">Journal</a>`;
+                if (pub.code)          links += `<a href="${pub.code}" class="b" target="_blank">Code</a>`;
+                if (pub.slides)        links += `<a href="${pub.slides}" class="b" target="_blank">Slides</a>`;
 
                 // Build venue string properly
                 let venueStr = `<span class="venue">${pub.venue}</span>, ${pub.year},`;
@@ -547,14 +548,14 @@
             <span class="article-title">
                 Cross-Quantilogram
             </span>
-            <a href="https://CRAN.R-project.org/package=quantilogram" class="b">R-Package: quantilogram</a> 
+            <a href="https://CRAN.R-project.org/package=quantilogram" class="b" target="_blank">R-Package: quantilogram</a> 
         </div>
 
         <div class="publication research-grant">
             <span class="article-title">
                 Structural Breaks in Quantile Regression 
             </span>
-            <a href="https://CRAN.R-project.org/package=QR.break" class="b">R-Package: QR.break</a> 
+            <a href="https://CRAN.R-project.org/package=QR.break" class="b" target="_blank">R-Package: QR.break</a> 
         </div>
 
         <!-- ----------- -->
@@ -564,11 +565,11 @@
         <h3>External Profiles</h3>
 
         <div style="margin-left: 22px;">
-            <a href="https://arxiv.org/a/oka_t_1.html" class="b">arXiv</a>         
-            <a href="https://dblp.org/pid/349/0354.html" class="b">DBLP</a>
-            <a href="https://scholar.google.com/citations?user=-9b2HAUAAAAJ&hl=en" class="b">Google Scholar</a>
-            <a href="https://orcid.org/0000-0002-8868-6136" class="b">ORCID</a>
-            <a href="https://www.webofscience.com/wos/author/record/HTR-1004-2023" class="b">Web of Science</a>
+            <a href="https://arxiv.org/a/oka_t_1.html" class="b" target="_blank">arXiv</a>         
+            <a href="https://dblp.org/pid/349/0354.html" class="b" target="_blank">DBLP</a>
+            <a href="https://scholar.google.com/citations?user=-9b2HAUAAAAJ&hl=en" class="b" target="_blank">Google Scholar</a>
+            <a href="https://orcid.org/0000-0002-8868-6136" class="b" target="_blank">ORCID</a>
+            <a href="https://www.webofscience.com/wos/author/record/HTR-1004-2023" class="b" target="_blank">Web of Science</a>
         </div>
 
  

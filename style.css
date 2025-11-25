@@ -92,47 +92,9 @@ ul li, p {
     color: #16354a;
     font-weight: normal;
 }       
-/* Square bullet for Working Papers */
-.working-paper::before {
-    content: "■";
-    position: absolute;
-    left: 0;
-    width: 1.5em;
-    text-align: right;
-    color: #16354a;
-    font-size: 0.8em; /* Adjust size if needed */
-    top: -0.1em; /* Adjust vertical alignment */
-}
-/* Square bullet for publication */
-.with-square-mark::before {
-    content: "■";  /* Square character */
-    display: inline-block;
-    margin-right: 0; /* Remove right margin to eliminate space */
-    color:  #16354a; /* Dark blue color, you can change this */
-    position: relative;
-    top: -0.1em; /* Move it up */
-    font-size: 0.9em; /* Adjust size if needed */
-    vertical-align: baseline; /* Ensure proper alignment */
-    width: 1.5em;
-}
 
 
 
-.research-grant p {
-    margin: 0;
-    padding: 0;
-    line-height: 1.2;
-}
-.article-title {
-    font-weight: bold;
-}
-.paper-link {
-    font-family: 'Roboto'; 
-    font-weight: 700; /* Slightly bold */
-    color: hsl(209, 25%, 24%);; /* Dark blue color, you can change this */
-    text-decoration: none; /* Removes underline from links */
-    text-shadow: 0.2px 0 0 currentColor; /* Creates the subtle bold effect */
-}
 .academic-positions {
     padding-left: 0;
     list-style-type: none;
@@ -245,24 +207,19 @@ code {
 .font-weight-bold {
     font-weight: bold;
 }
-.desc {
-    color: #666;
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-}
 .pub-title {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-bottom: 0px;
 }
 .pub-authors {
-    margin-bottom: 2px;
+    margin-bottom: 1px;
     color: #333;
 }
 .pub-venue {
     font-style: normal;
     color: #555;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 .pub-venue .venue {
     font-weight: 510;       
