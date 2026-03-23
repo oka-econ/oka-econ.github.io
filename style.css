@@ -125,7 +125,7 @@ ul li, p {
     margin-bottom: 0.5em; /* Keeps some space between different grants */
 }        
 
-<!-- Image-Related -->
+/* Image-Related  */
 .header-image {
     width: 100%;
     max-width: 700px; /* matches your content max-width */
