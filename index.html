@@ -402,6 +402,15 @@
             //------------------------------------           
             proceedings: [
                 {
+                    title: "Modeling Covariate Transition for Efficient Estimation of Longitudinal Treatment Effects in Randomized Experiments",
+                    author: "Naoki Chihara, Yasuko Matsubara, Yasushi Sakurai, Shota Yasui",
+                    venue: "International Conference on Machine Learning (ICML)",
+                    year: "2026",
+                    working_paper: "",
+                    abstract: "We present a regression-adjustment framework designed to estimate longitudinal treatment effects in randomized experiments under static regimes. Although regression-adjustment methods are useful for variance reduction in randomized experiments through the use of pre-treatment covariates, they usually focus only on average effects, which cannot capture valuable knowledge about when effects appear and how long they continue. To address this limitation, we need to consider intermediate outcomes and evolving post-treatment covariates over time, and we represent these transitions using transition kernels. Furthermore, we establish the asymptotic normality and the semiparametric efficiency bound for our estimator, enabling more powerful statistical inference. Simulation studies and empirical analysis using A/B test data from a streaming platform in Japan demonstrate the practical advantages of our method.",
+                    keywords: "Causal Inference, Distributional Treatment Effect, Covariate Adjustment, Longitudinal Data"
+                },
+                {
                     title: "Beyond the Average: Distributional Causal Inference under Imperfect Compliance",
                     author: "Undral Byambadalai, Tomu Hirata, Shota Yasui",
                     venue: "Neural Information Processing Systems (NeurIPS)",
@@ -466,15 +475,10 @@
 
         // Function to toggle abstract
         function toggleAbstract(uniqueId) {
-            const abstractDiv = document.getElementById(`abstract-${uniqueId}`);
-            if (abstractDiv.style.display === 'none' || abstractDiv.style.display === '') {
-                abstractDiv.style.display = 'block';
-            } else {
-                abstractDiv.style.display = 'none';
-            }
+            document.getElementById(`abstract-${uniqueId}`).classList.toggle('open');
             return false;
         }
-
+        
         // Function to render publications
         function renderPublications() {
             const journalContainer = document.getElementById('journal-list');
@@ -483,6 +487,17 @@
             const proceedingsContainer = document.getElementById('proceedings-list');
             proceedingsContainer.innerHTML = generatePublicationsHTML(publications.proceedings, 'proceedings');
         } 
+
+        function escapeHTML(str) {
+            if (str == null) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
 
         // Publication details 
         function generatePublicationsHTML(pubList, prefix) {
@@ -493,19 +508,22 @@
                 const uniqueId = `${prefix}-${index}`;  
 
                 // Build links HTML
+                // Build links HTML
                 let links = '';
-                if (pub.abstract)      links += `<a href="#" onclick="return toggleAbstract('${uniqueId}')" class="b">Abstract</a>`; 
-                if (pub.working_paper) links += `<a href="${pub.working_paper}" class="b" target="_blank">Working Paper</a>`;
-                if (pub.proceedings)   links += `<a href="${pub.proceedings}" class="b" target="_blank">Conference Proceedings</a>`;
-                if (pub.journal_link)  links += `<a href="${pub.journal_link}" class="b" target="_blank">Journal</a>`;
-                if (pub.code)          links += `<a href="${pub.code}" class="b" target="_blank">Code</a>`;
-                if (pub.slides)        links += `<a href="${pub.slides}" class="b" target="_blank">Slides</a>`;
-
+                if (pub.abstract)      links += `<a href="#" data-abstract-id="${uniqueId}" class="b">Abstract</a>`;
+                if (pub.working_paper) links += `<a href="${pub.working_paper}" class="b" target="_blank" rel="noopener noreferrer">Working Paper</a>`;
+                if (pub.proceedings)   links += `<a href="${pub.proceedings}" class="b" target="_blank" rel="noopener noreferrer">Conference Proceedings</a>`;
+                if (pub.journal_link)  links += `<a href="${pub.journal_link}" class="b" target="_blank" rel="noopener noreferrer">Journal</a>`;
+                if (pub.code)          links += `<a href="${pub.code}" class="b" target="_blank" rel="noopener noreferrer">Code</a>`;
+                if (pub.slides)        links += `<a href="${pub.slides}" class="b" target="_blank" rel="noopener noreferrer">Slides</a>`;
+        
                 // Build venue string properly
-                let venueStr = `<span class="venue">${pub.venue}</span>, ${pub.year},`;
-                if (pub.volume) venueStr += ` ${pub.volume}`;
-                if (pub.pages) venueStr += `, pp. ${pub.pages}`;
-                venueStr += `, with ${pub.author}`;
+                let venueParts = [`<span class="venue">${pub.venue}</span>`, pub.year];
+                if (pub.volume) venueParts.push(pub.volume);
+                if (pub.pages) venueParts.push(`pp. ${pub.pages}`);
+                
+                let venueStr = venueParts.join(', ');
+                if (pub.author) venueStr += `, with ${pub.author}`;
 
                 html += `
                 <div class="publication">
@@ -513,7 +531,7 @@
                     <div class="pub-venue">${venueStr}</div>
                     <div>${links}</div>
                     ${pub.abstract ? `
-                        <div id="abstract-${uniqueId}" class="abstract" style="display: none;">
+                        <div id="abstract-${uniqueId}" class="abstract">
                             <strong>Abstract:</strong> ${pub.abstract}
                             ${pub.keywords ? `<div style="margin-top: 8px;"><strong>Keywords:</strong> ${pub.keywords}</div>` : ''}
                         </div>
@@ -528,7 +546,14 @@
         // Render publications when page loads
         document.addEventListener('DOMContentLoaded', renderPublications);
 
-
+        // Abstract 
+        document.addEventListener('click', function(e) {
+            const id = e.target.dataset.abstractId;
+            if (id) {
+                e.preventDefault();
+                toggleAbstract(id);
+            }
+        });
         
 
     </script>
@@ -673,6 +698,9 @@
   color: #000 !important;
   text-decoration: none !important;
 }
+
+.abstract { display: none; }
+.abstract.open { display: block; }
 </style>
 
 </html>
