@@ -147,7 +147,7 @@
                 const uniqueId = `wp-${index}`;
                 
                 let links = '';
-                if (paper.abstract) links += `<a href="#" onclick="return toggleAbstract('${uniqueId}')" class="b">Abstract</a>`;
+                if (paper.abstract) links += `<a href="#" data-abstract-id="${uniqueId}" class="b">Abstract</a>`;
                 if (paper.working_paper) links += `<a href="${paper.working_paper}" class="b">Working Paper</a>`;
                 
                 let dateStr = paper.month ? `${paper.month} ${paper.year}` : paper.year;
@@ -158,7 +158,7 @@
                         <div class="pub-venue">with ${paper.author}, ${dateStr}</div>
                         <div>${links}</div>
                         ${paper.abstract ? `
-                            <div id="abstract-${uniqueId}" class="abstract" style="display: none;">
+                            <div id="abstract-${uniqueId}" class="abstract">
                                 <strong>Abstract:</strong> ${paper.abstract}
                                 ${paper.keywords ? `<div style="margin-top: 8px;"><strong>Keywords:</strong> ${paper.keywords}</div>` : ''}
                             </div>
